@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { t } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { Spinner } from "@/components/Spinner";
@@ -36,7 +43,6 @@ function getCombo(): HTMLSelectElement | null {
   return document.querySelector<HTMLSelectElement>(".goog-te-combo");
 }
 
-/** Full language list from Google's widget (100+). */
 function readGoogleLanguages(): LangOption[] {
   const combo = getCombo();
   if (!combo) return [];
@@ -48,8 +54,24 @@ function readGoogleLanguages(): LangOption[] {
 function readActiveCode(): string {
   const combo = getCombo();
   if (combo?.value) return combo.value;
-  const match = document.cookie.match(/(?:^|;\s*)googtrans=\/[^/]+\/([^;]+)/);
-  return match?.[1] || "";
+  return "";
+}
+
+/** Drop Google Translate persistence so refresh returns to browser default. */
+function clearGoogleTranslatePersistence() {
+  const expire = "Thu, 01 Jan 1970 00:00:00 GMT";
+  const host = window.location.hostname;
+  const parts = [
+    "googtrans=;expires=" + expire + ";path=/",
+    "googtrans=;expires=" + expire + ";path=/;domain=" + host,
+    "googtrans=;expires=" + expire + ";path=/;domain=." + host,
+  ];
+  for (const c of parts) document.cookie = c;
+
+  if (window.location.hash.includes("googtrans")) {
+    const url = window.location.pathname + window.location.search;
+    window.history.replaceState(null, "", url);
+  }
 }
 
 function applyGoogleLang(code: string) {
@@ -57,10 +79,7 @@ function applyGoogleLang(code: string) {
   if (!combo) return false;
 
   if (!code) {
-    document.cookie = "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
-    document.cookie =
-      "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" +
-      window.location.hostname;
+    clearGoogleTranslatePersistence();
     window.location.reload();
     return true;
   }
@@ -122,7 +141,10 @@ function ensureGoogleTranslate(pageLanguage: string) {
   }
 }
 
-/** Google Translate — full language list from Google's own widget. */
+/**
+ * Google Translate for QR pages only.
+ * Selection is not sticky across refresh — cookie is cleared on each page load.
+ */
 export function GoogleTranslateButton({
   pageLang,
   variant = "onDark",
@@ -136,8 +158,18 @@ export function GoogleTranslateButton({
   const panelRef = useRef<HTMLDivElement>(null);
   const dark = variant === "onDark";
 
+  // Before paint: forget previous Google Translate choice on every visit/refresh.
+  useLayoutEffect(() => {
+    clearGoogleTranslatePersistence();
+    setTarget("");
+  }, []);
+
+  // Load the Google widget only when the user opens the panel (not on every page load).
   useEffect(() => {
+    if (!open) return;
     ensureGoogleTranslate(pageLang);
+    setQuery("");
+
     const tick = window.setInterval(() => {
       const list = readGoogleLanguages();
       if (list.length > 0) {
@@ -147,16 +179,6 @@ export function GoogleTranslateButton({
         window.clearInterval(tick);
       }
     }, 200);
-    return () => window.clearInterval(tick);
-  }, [pageLang]);
-
-  useEffect(() => {
-    if (!open) return;
-    setTarget(readActiveCode());
-    setQuery("");
-    // Refresh list in case widget populated late
-    const list = readGoogleLanguages();
-    if (list.length) setLangs(list);
 
     function onDoc(e: MouseEvent) {
       if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
@@ -164,8 +186,12 @@ export function GoogleTranslateButton({
       }
     }
     document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
-  }, [open]);
+
+    return () => {
+      window.clearInterval(tick);
+      document.removeEventListener("mousedown", onDoc);
+    };
+  }, [open, pageLang]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -244,7 +270,11 @@ export function GoogleTranslateButton({
               <div className="grid place-items-center py-10 text-navy">
                 <Spinner
                   size="md"
-                  label={pageLang === "el" ? "Φόρτωση γλωσσών…" : "Loading languages…"}
+                  label={
+                    pageLang === "el"
+                      ? "Φόρτωση γλωσσών…"
+                      : "Loading languages…"
+                  }
                   className="text-navy"
                 />
               </div>
@@ -264,7 +294,9 @@ export function GoogleTranslateButton({
                     key={l.code}
                     type="button"
                     className={`block min-h-11 w-full px-3 py-3 text-left text-base hover:bg-paper sm:min-h-0 sm:py-2 sm:text-sm ${
-                      target === l.code ? "bg-navy/10 font-semibold text-navy" : ""
+                      target === l.code
+                        ? "bg-navy/10 font-semibold text-navy"
+                        : ""
                     }`}
                     onClick={() => onPick(l.code)}
                   >
