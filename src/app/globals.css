@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0b2a5b;
+  --navy-2: #123a7a;
+  --gold: #c9a227;
+  --ink: #12203a;
+  --muted: #5d6a82;
+  --paper: #f6f3ec;
+  --card: #fffcf7;
+  --line: #e4dcc9;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+body {
+  background:
+    radial-gradient(1100px 480px at 8% -8%, #cfdcf3 0%, transparent 58%),
+    radial-gradient(800px 380px at 100% 0%, #efe2bd 0%, transparent 48%),
+    linear-gradient(180deg, #f8f5ee 0%, var(--paper) 40%);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 45%, white);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+summary,
+select,
+label[for],
+a[href] {
+  cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Google Website Translator — keep gadget off-screen; we drive it via our select */
+#google_translate_element {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-te-banner-frame {
+  display: none !important;
+}
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.skiptranslate iframe.skiptranslate {
+  display: none !important;
+}
+font > font {
+  background: transparent !important;
+  box-shadow: none !important;
+}

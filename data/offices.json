@@ -1,0 +1,886 @@
+[
+  {
+    "id": "ZjC9riL4P4",
+    "code": "1.1.1",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36637",
+    "email": "test@",
+    "el": {
+      "label": "Γραφείο 1.1.1",
+      "occupant": "Καλλονιάτης Χρήστος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.1",
+      "occupant": "Καλλονιάτης Χρήστος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "Yb3mgmDZbV",
+    "code": "1.1.2",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36620",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.2",
+      "occupant": "Κώτης Κωνστατίνος",
+      "title": "Αναπληρωτής Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.2",
+      "occupant": "Κώτης Κωνστατίνος",
+      "title": "Associate Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "9JgC2zpE9E",
+    "code": "1.1.3",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36630",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.3",
+      "occupant": "Μπούνια Αλεξάνδρα",
+      "title": "Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.3",
+      "occupant": "Μπούνια Αλεξάνδρα",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "RiQk3abf4H",
+    "code": "1.1.4",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36687",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.4",
+      "occupant": "Χουρμουζιάδη Αναστασία",
+      "title": "Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.4",
+      "occupant": "Χουρμουζιάδη Αναστασία",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "CHoh6Jwjyc",
+    "code": "1.1.5",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36644",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.5",
+      "occupant": "Καρυδάκης Γεώργιος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.5",
+      "occupant": "Καρυδάκης Γεώργιος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "PJUxgcjvkf",
+    "code": "1.1.6",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36629",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.6",
+      "occupant": "Μπουμπάρης Νικόλαος",
+      "title": "Αναπληρωτής Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.6",
+      "occupant": "Μπουμπάρης Νικόλαος",
+      "title": "Associate Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "bvwsJrnPfE",
+    "code": "1.1.7",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36613",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.7",
+      "occupant": "Παυλογεωργάτος Γεράσιμος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.7",
+      "occupant": "Παυλογεωργάτος Γεράσιμος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "FMWavhj2wT",
+    "code": "1.1.8",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36624",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.8",
+      "occupant": "Αναγνωστόπουλος Χρήστος-Νικόλαος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.8",
+      "occupant": "Αναγνωστόπουλος Χρήστος-Νικόλαος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "KVGLEyhwMF",
+    "code": "1.1.9",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36638",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.9",
+      "occupant": "Κασαπάκης Βλάσιος",
+      "title": "Αναπληρωτής Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.9",
+      "occupant": "Κασαπάκης Βλάσιος",
+      "title": "Associate Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "KrKamSUn8V",
+    "code": "1.1.10",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36612",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.10",
+      "occupant": "Καβακλή Ευαγγελία",
+      "title": "Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.10",
+      "occupant": "Καβακλή Ευαγγελία",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "UwJtAd5MX7",
+    "code": "1.1.11",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36631",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.11",
+      "occupant": "Τσεκούρας Γεώργιος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.11",
+      "occupant": "Τσεκούρας Γεώργιος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "CPaeJdLNty",
+    "code": "1.1.12",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36622",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.12",
+      "occupant": "Κίτσιου Αγγελική",
+      "title": "Επίκουρη Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.12",
+      "occupant": "Κίτσιου Αγγελική",
+      "title": "Assistant Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "kAQYsqUECS",
+    "code": "1.1.13",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36618",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.13",
+      "occupant": "Σαμπανίκου Ευαγγελία",
+      "title": "Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.13",
+      "occupant": "Σαμπανίκου Ευαγγελία",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "WD9fHPJacQ",
+    "code": "1.1.14",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36642",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.14",
+      "occupant": "Στάθη Ειρήνη",
+      "title": "Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.14",
+      "occupant": "Στάθη Ειρήνη",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "G4cJ8z83Uk",
+    "code": "1.1.15",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.15",
+      "occupant": "Αϊβαλιώτης Κωνσταντίνος",
+      "title": "Επίκουρος Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.15",
+      "occupant": "Αϊβαλιώτης Κωνσταντίνος",
+      "title": "Assistant Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "27FQqyhUHf",
+    "code": "1.1.16",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.16",
+      "occupant": "Στεφανοπούλου Ευδοκία",
+      "title": "Επίκουρη Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.16",
+      "occupant": "Στεφανοπούλου Ευδοκία",
+      "title": "Assistant Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "XfZR96pHwN",
+    "code": "1.1.17",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36639",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.17",
+      "occupant": "Πούλου Δέσποινα",
+      "title": "μ. Επίκουρη Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.17",
+      "occupant": "Πούλου Δέσποινα",
+      "title": "Assistant Professor (retired)",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "N8dfZbhMNC",
+    "code": "1.1.18",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36614",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.18",
+      "occupant": "Χρυσάνθη Αγγελική",
+      "title": "Επίκουρη Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.18",
+      "occupant": "Χρυσάνθη Αγγελική",
+      "title": "Assistant Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "6tyDCPRDWB",
+    "code": "1.1.19",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "room",
+    "phone": "22510 36665",
+    "email": "",
+    "el": {
+      "label": "Αίθουσα Τηλεδιασκέψεων",
+      "occupant": "",
+      "title": "ΤΠΤΕ",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Αίθουσα Τηλεδιασκέψεων",
+      "occupant": "",
+      "title": "Dept. of Cultural Technology and Communication",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "KbSD6LUH5Y",
+    "code": "1.1.20",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36632",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.20",
+      "occupant": "Παπαγεωργίου Δημήτριος",
+      "title": "Καθηγητής",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.20",
+      "occupant": "Παπαγεωργίου Δημήτριος",
+      "title": "Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "Cdb4877J95",
+    "code": "1.1.21",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36626",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.21",
+      "occupant": "Καταπότη Δέσποινα",
+      "title": "Αναπληρώτρια Καθηγήτρια",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.21",
+      "occupant": "Καταπότη Δέσποινα",
+      "title": "Associate Professor",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "4bKMhn2DNv",
+    "code": "1.1.22",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Γραφείο συμβασιούχων συναδελφισσών/ων",
+      "occupant": "",
+      "title": "ΤΠΤΕ",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Γραφείο συμβασιούχων συναδελφισσών/ων",
+      "occupant": "",
+      "title": "Dept. of Cultural Technology and Communication",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "34b4RqjT4P",
+    "code": "1.1.29",
+    "buildingCode": "1",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36615",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 1.1.29",
+      "occupant": "Κάργας Παναγιώτης",
+      "title": "ΕΤΕΠ",
+      "building": "Κτίριο 1",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 1.1.29",
+      "occupant": "Κάργας Παναγιώτης",
+      "title": "Special Technical Laboratory Staff (E.T.E.P.)",
+      "building": "Building 1",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "cb4TFtMFja"
+  },
+  {
+    "id": "bsMRKr5gbc",
+    "code": "2.2.1",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Ερευνητικό Εργαστήριο - Τεχνολογίες Προστασίας της Ιδιωτικότητας & Εφαρμογές Πληροφορικής στις Κοινωνικές Επιστήμες",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Ερευνητικό Εργαστήριο - Τεχνολογίες Προστασίας της Ιδιωτικότητας & Εφαρμογές Πληροφορικής στις Κοινωνικές Επιστήμες",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "W94RQD98aG",
+    "code": "2.2.2",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "22510 36625",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Πολιτισμικών Πληροφορικών Συστημάτων",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Πολιτισμικών Πληροφορικών Συστημάτων",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "mGiFSxf3V8",
+    "code": "2.2.3",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "22510 36635",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Διαχείρισης Πολιτισμικής Κληρονομιάς",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Διαχείρισης Πολιτισμικής Κληρονομιάς",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "242nTEgxCH",
+    "code": "2.2.14",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "22510 36673",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "xhGMuNz7Nu",
+    "code": "2.2.15",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "V4Q6vkF2dK",
+    "code": "",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36610",
+    "email": "",
+    "el": {
+      "label": "Γραφείο ΕΔΙΠ",
+      "occupant": "Σιδερή Μαρία",
+      "title": "ΕΔΙΠ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "EDIP Office",
+      "occupant": "Σιδερή Μαρία",
+      "title": "Laboratory Teaching Staff (E.D.I.P.)",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "5tYgfc4JcU",
+    "code": "2.2.16",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 36663",
+    "email": "",
+    "el": {
+      "label": "Γραφείο 2.2.16",
+      "occupant": "Σίμου Σταύρος",
+      "title": "ΕΔΙΠ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Office 2.2.16",
+      "occupant": "Σίμου Σταύρος",
+      "title": "Laboratory Teaching Staff (E.D.I.P.)",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "JCWdGB2n7A",
+    "code": "",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "office",
+    "phone": "22510 63611",
+    "email": "",
+    "el": {
+      "label": "Γραφείο ΕΔΙΠ",
+      "occupant": "Χατζηγεωργίου Τριάδα",
+      "title": "ΕΔΙΠ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "EDIP Office",
+      "occupant": "Χατζηγεωργίου Τριάδα",
+      "title": "Laboratory Teaching Staff (E.D.I.P.)",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "PG6UpW8PR3",
+    "code": "2.2.17",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "22510 36617",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Μουσειολογίας",
+      "occupant": "",
+      "title": "Ερευνητικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Μουσειολογίας",
+      "occupant": "",
+      "title": "CT&C Research Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "HMnEMAJ4Hg",
+    "code": "2.3.1",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Η/Υ ΠΠΣ",
+      "occupant": "",
+      "title": "Εκπαιδευτικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Η/Υ ΠΠΣ",
+      "occupant": "",
+      "title": "CT&C Teaching Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  },
+  {
+    "id": "xWVs83bGCL",
+    "code": "2.3.2",
+    "buildingCode": "2",
+    "published": true,
+    "kind": "lab",
+    "phone": "",
+    "email": "",
+    "el": {
+      "label": "Εργαστήριο Η/Υ ΠΜΣ",
+      "occupant": "",
+      "title": "Εκπαιδευτικό Εργαστήριο ΤΠΤΕ",
+      "building": "Κτίριο 2",
+      "department": "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας",
+      "notes": ""
+    },
+    "en": {
+      "label": "Εργαστήριο Η/Υ ΠΜΣ",
+      "occupant": "",
+      "title": "CT&C Teaching Laboratory",
+      "building": "Building 2",
+      "department": "Department of Cultural Technology and Communication",
+      "notes": ""
+    },
+    "buildingId": "t2vHDfWhCY"
+  }
+]
