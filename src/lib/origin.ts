@@ -2,7 +2,7 @@ import { headers } from "next/headers";
 
 /** Public site origin for QR URLs (server). */
 export async function getRequestOrigin(): Promise<string> {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  const fromEnv = process.env.SITE_URL?.replace(/\/$/, "");
   if (fromEnv) return fromEnv;
 
   const h = await headers();

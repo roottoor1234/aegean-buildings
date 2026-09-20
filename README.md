@@ -24,7 +24,7 @@ QR σε πόρτες γραφείων / εργαστηρίων που ανοίγ
 ```bash
 npm install
 cp .env.example .env.local
-# συμπλήρωσε NEXT_PUBLIC_SUPABASE_URL και NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+# συμπλήρωσε SUPABASE_URL και SUPABASE_PUBLISHABLE_KEY
 npm run dev
 ```
 
@@ -59,11 +59,13 @@ npm run seed
 
 | Variable | Περιγραφή |
 | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | URL project Supabase |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Publishable / anon key |
-| `NEXT_PUBLIC_SITE_URL` | (προαιρετικό) δημόσιο domain για QR σε production |
+| `SUPABASE_URL` | URL project Supabase (server-only) |
+| `SUPABASE_PUBLISHABLE_KEY` | Publishable / anon key (server-only) |
+| `SITE_URL` | (προαιρετικό) δημόσιο domain για QR σε production |
 
 **Μην** κάνεις commit το `.env.local`.
+
+Στο Vercel βάλε τα ως **Encrypted / Sensitive** (χωρίς prefix `NEXT_PUBLIC_`).
 
 ## Deploy (Vercel)
 

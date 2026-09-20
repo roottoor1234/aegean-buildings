@@ -6,11 +6,11 @@ import { createClient } from "@supabase/supabase-js";
 import { readFileSync } from "fs";
 import path from "path";
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+const url = process.env.SUPABASE_URL;
+const key = process.env.SUPABASE_PUBLISHABLE_KEY;
 
 if (!url || !key) {
-  console.error("Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY");
+  console.error("Set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY");
   process.exit(1);
 }
 
