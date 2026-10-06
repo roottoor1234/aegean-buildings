@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T08:03:10.789Z",
+  "title": "Design System: Aegean Building Info",
+  "extensions": {
+    "colorMeta": {
+      "sea": {
+        "role": "primary",
+        "displayName": "Logo Sea",
+        "canonical": "oklch(51.1% 0.123 246.1)",
+        "tonalRamp": [
+          "#000c1a",
+          "#012846",
+          "#034876",
+          "#146ba8",
+          "#418fcf",
+          "#67b5f7",
+          "#add6fc",
+          "#e4f0fb"
+        ]
+      },
+      "sea-deep": {
+        "role": "primary",
+        "displayName": "Deep Sea",
+        "canonical": "oklch(40.5% 0.100 247.6)",
+        "tonalRamp": [
+          "#000c1b",
+          "#022846",
+          "#064877",
+          "#316a9c",
+          "#558ec3",
+          "#79b4ea",
+          "#add6fd",
+          "#e4f0fc"
+        ]
+      },
+      "sea-2": {
+        "role": "primary",
+        "displayName": "Bright Sea",
+        "canonical": "oklch(56.8% 0.134 245.9)",
+        "tonalRamp": [
+          "#010c19",
+          "#032844",
+          "#0b4873",
+          "#106ba8",
+          "#368fd5",
+          "#5eb5fd",
+          "#acd6fd",
+          "#e4f0fb"
+        ]
+      },
+      "stone": {
+        "role": "secondary",
+        "displayName": "Logo Stone",
+        "canonical": "oklch(71.2% 0.013 111.9)",
+        "tonalRamp": [
+          "#0b0c06",
+          "#262720",
+          "#45463e",
+          "#66675f",
+          "#898a81",
+          "#aeafa6",
+          "#d1d2c8",
+          "#eeefe6"
+        ]
+      },
+      "stone-soft": {
+        "role": "secondary",
+        "displayName": "Pale Stone",
+        "canonical": "oklch(89.5% 0.011 112.4)",
+        "tonalRamp": [
+          "#0b0c07",
+          "#262721",
+          "#45463f",
+          "#666760",
+          "#898a83",
+          "#aeafa7",
+          "#d1d2ca",
+          "#eeefe7"
+        ]
+      },
+      "stone-ink": {
+        "role": "secondary",
+        "displayName": "Engraved Stone",
+        "canonical": "oklch(48.6% 0.013 112.6)",
+        "tonalRamp": [
+          "#0b0c06",
+          "#262720",
+          "#45463e",
+          "#66675f",
+          "#898a81",
+          "#aeafa6",
+          "#d1d2c9",
+          "#eeefe6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(24.6% 0.029 247.1)",
+        "tonalRamp": [
+          "#020c17",
+          "#1b2834",
+          "#394754",
+          "#596876",
+          "#7b8b9a",
+          "#a0b0c0",
+          "#c2d3e4",
+          "#e4f0fc"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "oklch(46.9% 0.013 256.7)",
+        "tonalRamp": [
+          "#080b11",
+          "#22272d",
+          "#41454c",
+          "#61666e",
+          "#848a91",
+          "#a9aeb6",
+          "#ccd1da",
+          "#e9eff7"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(96.6% 0.005 106.5)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#272724",
+          "#454542",
+          "#666663",
+          "#898986",
+          "#aeaeaa",
+          "#d1d1cd",
+          "#efefeb"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Deep Paper",
+        "canonical": "oklch(93.5% 0.008 106.6)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#272722",
+          "#454540",
+          "#666661",
+          "#898984",
+          "#aeaea9",
+          "#d1d1cb",
+          "#efefe9"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card",
+        "canonical": "oklch(99.3% 0.003 106.4)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262625",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#aeaeac",
+          "#d1d1cf",
+          "#eeeeec"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.5% 0.009 106.6)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#272722",
+          "#454540",
+          "#666660",
+          "#8a8a83",
+          "#aeaea8",
+          "#d1d1ca",
+          "#efefe8"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "oklch(83.3% 0.012 111.8)",
+        "tonalRamp": [
+          "#0b0c06",
+          "#262720",
+          "#45463e",
+          "#66675f",
+          "#898a82",
+          "#aeafa6",
+          "#d1d2c9",
+          "#eeefe6"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "Success Green",
+        "canonical": "oklch(47.3% 0.090 153.2)",
+        "tonalRamp": [
+          "#001400",
+          "#002f0c",
+          "#0d502a",
+          "#35724a",
+          "#59966c",
+          "#7ebc90",
+          "#a0dfb2",
+          "#e0f5e5"
+        ]
+      },
+      "ok-bg": {
+        "role": "status",
+        "displayName": "Success Tint",
+        "canonical": "oklch(94.4% 0.018 148.1)",
+        "tonalRamp": [
+          "#060d07",
+          "#1e261f",
+          "#3c453d",
+          "#5d665e",
+          "#7f8980",
+          "#a4aea5",
+          "#c6d1c7",
+          "#e7f2e8"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Danger Red",
+        "canonical": "oklch(48.0% 0.150 27.3)",
+        "tonalRamp": [
+          "#2d0000",
+          "#4f0000",
+          "#75201b",
+          "#9c443c",
+          "#c4675d",
+          "#ed8c81",
+          "#ffafa3",
+          "#ffe7e4"
+        ]
+      },
+      "danger-bg": {
+        "role": "status",
+        "displayName": "Danger Tint",
+        "canonical": "oklch(93.8% 0.020 28.9)",
+        "tonalRamp": [
+          "#130807",
+          "#2d201e",
+          "#4d3f3c",
+          "#6e5f5d",
+          "#92827f",
+          "#b7a6a4",
+          "#dbc9c6",
+          "#fceae7"
+        ]
+      },
+      "warn": {
+        "role": "status",
+        "displayName": "Warning Amber",
+        "canonical": "oklch(50.8% 0.108 73.3)",
+        "tonalRamp": [
+          "#230000",
+          "#411500",
+          "#643600",
+          "#885800",
+          "#ad7b32",
+          "#d4a059",
+          "#f9c37c",
+          "#fbecd9"
+        ]
+      },
+      "warn-bg": {
+        "role": "status",
+        "displayName": "Warning Tint",
+        "canonical": "oklch(95.4% 0.040 88.2)",
+        "tonalRamp": [
+          "#120a00",
+          "#2c230b",
+          "#4b4129",
+          "#6d6249",
+          "#90856b",
+          "#b5aa8f",
+          "#d9cdb1",
+          "#f7eed8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Plate Numeral",
+        "purpose": "The room numeral on the plate; 4.75rem mobile, 6rem from 640px; 3.5rem/4.5rem for long codes, 3rem compact; 7.5rem login specimen."
+      },
+      "headline": {
+        "displayName": "Plate Name",
+        "purpose": "Occupant or space name on the plate, 2.125rem to 3rem; home header title at 2.5rem to 3.25rem."
+      },
+      "page-title": {
+        "displayName": "Page Title",
+        "purpose": "Back-office page titles and the sign-in heading; 2rem to 2.5rem from 1024px."
+      },
+      "section": {
+        "displayName": "Section Heading",
+        "purpose": "Public section headings on building and home pages."
+      },
+      "title": {
+        "displayName": "Display Title",
+        "purpose": "Empty-state titles and small display moments."
+      },
+      "numeral-row": {
+        "displayName": "Row Numeral",
+        "purpose": "Door code column in directory rows, stone-ink."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Plate subtitles, header lead copy, contact action value, home search field."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Content values and running text."
+      },
+      "body-control": {
+        "displayName": "Control",
+        "purpose": "Input text, rail links, descriptive copy in cards."
+      },
+      "body-small": {
+        "displayName": "Small",
+        "purpose": "Secondary lines under row headlines, addresses, table cells, md button labels."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, definition terms, plate meta, hints, footer. Sentence case."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Badges and segment counts."
+      },
+      "tag": {
+        "displayName": "Language Tag",
+        "purpose": "The ΕΛ / EN tag on bilingual field labels; the only tracked text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18)",
+        "purpose": "Cards, lists, contact actions, form sections on paper."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35)",
+        "purpose": "Toasts, the save bar, the mobile menu panel, hovered building cards."
+      },
+      {
+        "name": "control-inset",
+        "value": "inset 0 1px 1px rgb(16 52 82 / 0.04)",
+        "purpose": "Text inputs at rest."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgb(21 107 168 / 0.14)",
+        "purpose": "Input focus ring; danger-tinted (rgb(161 48 42 / 0.14)) when invalid."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All entrance and travel motion: rule draw, rise, save bar, switch knob."
+      },
+      {
+        "name": "rule-draw",
+        "value": "scaleX(0 to 1) 900ms ease-out-expo 120ms, origin left",
+        "purpose": "The stone hairline engraving in under each plate on first paint."
+      },
+      {
+        "name": "rise",
+        "value": "opacity 0 to 1, translateY(6px to 0) 520ms ease-out-expo",
+        "purpose": "Toasts and entering content."
+      },
+      {
+        "name": "shimmer",
+        "value": "background-position sweep 1.4s linear infinite",
+        "purpose": "Skeleton loading: deep paper through a #f8f8f5 highlight."
+      },
+      {
+        "name": "state",
+        "value": "150ms background/border/color",
+        "purpose": "Button and row state changes; 1px press-down on active."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 1ms",
+        "purpose": "prefers-reduced-motion collapses every animation and transition."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs-split",
+        "value": "440px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sea fill, white text: the single main action of a back-office view.",
+      "html": "<button class=\"ds-btn-primary\">Αποθήκευση</button>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:8px;font:600 14px \"Source Sans 3\",system-ui,sans-serif;border:1px solid transparent;cursor:pointer;transition:background-color 150ms,border-color 150ms,color 150ms,transform 150ms;background:var(--sea);color:#fff;box-shadow:0 1px 2px rgb(10 42 68 / 0.25);} .ds-btn-primary:hover{background:var(--sea-2);} .ds-btn-primary:active{background:var(--sea-deep);transform:translateY(1px);} .ds-btn-primary:focus-visible{outline:2px solid var(--sea-2);outline-offset:2px;}"
+    },
+    {
+      "name": "Sea Button",
+      "kind": "button",
+      "refersTo": "button-sea",
+      "description": "Deep-sea fill, white text; hover to Logo Sea. Sign-in submit and actions on sea fields.",
+      "html": "<button class=\"ds-btn-sea\">Είσοδος</button>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-btn-sea{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:8px;font:600 14px \"Source Sans 3\",system-ui,sans-serif;border:1px solid transparent;cursor:pointer;transition:background-color 150ms,border-color 150ms,color 150ms,transform 150ms;background:var(--sea-deep);color:#fff;} .ds-btn-sea:hover{background:var(--sea);} .ds-btn-sea:active{background:var(--sea-deep);transform:translateY(1px);} .ds-btn-sea:focus-visible{outline:2px solid var(--sea-2);outline-offset:2px;}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Card fill, Strong Hairline border, sea text: the default button.",
+      "html": "<button class=\"ds-btn-secondary\">Λήψη PNG</button>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:8px;font:600 14px \"Source Sans 3\",system-ui,sans-serif;border:1px solid transparent;cursor:pointer;transition:background-color 150ms,border-color 150ms,color 150ms,transform 150ms;background:var(--card);color:var(--sea);border-color:var(--line-strong);box-shadow:0 1px 1px rgb(16 52 82 / 0.04);} .ds-btn-secondary:hover{border-color:rgb(21 107 168 / 0.35);background:#fff;} .ds-btn-secondary:active{background:var(--paper);transform:translateY(1px);} .ds-btn-secondary:focus-visible{outline:2px solid var(--sea-2);outline-offset:2px;}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "First step of the two-step inline delete.",
+      "html": "<button class=\"ds-btn-danger\">Διαγραφή</button>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-btn-danger{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:8px;font:600 14px \"Source Sans 3\",system-ui,sans-serif;border:1px solid transparent;cursor:pointer;transition:background-color 150ms,border-color 150ms,color 150ms,transform 150ms;background:var(--card);color:var(--danger);border-color:rgb(161 48 42 / 0.3);} .ds-btn-danger:hover{background:var(--danger-bg);} .ds-btn-danger:active{background:rgb(161 48 42 / 0.15);transform:translateY(1px);} .ds-btn-danger:focus-visible{outline:2px solid var(--sea-2);outline-offset:2px;}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-input",
+      "description": "Label above with a language tag, white control, Bright Sea focus with a soft halo.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Ονοματεπώνυμο <span class=\"ds-lang\">ΕΛ</span></span><input class=\"ds-input\" placeholder=\"Καλλονιάτης Χρήστος\"></label>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-field{display:block;max-width:320px;font-family:\"Source Sans 3\",system-ui,sans-serif;} .ds-field-label{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px;font-weight:600;color:rgb(21 34 46 / 0.8);} .ds-lang{border-radius:4px;background:var(--paper-2);padding:1px 6px;font-size:11px;font-weight:700;letter-spacing:0.025em;color:var(--muted);} .ds-input{width:100%;box-sizing:border-box;height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);font:400 15px \"Source Sans 3\",system-ui,sans-serif;box-shadow:inset 0 1px 1px rgb(16 52 82 / 0.04);outline:none;transition:border-color 150ms,box-shadow 150ms;caret-color:var(--sea-2);} .ds-input:hover{border-color:rgb(21 107 168 / 0.3);} .ds-input:focus{border-color:var(--sea-2);box-shadow:0 0 0 3px rgb(21 107 168 / 0.14);}"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "badge-ok",
+      "description": "Text-on-tint pill; ok carries a dot for published state, stone is stone-ink on stone/20.",
+      "html": "<span class=\"ds-badge\"><span class=\"ds-dot\"></span>Δημοσιευμένο</span> <span class=\"ds-badge ds-badge-stone\">Εργαστήριο</span> <span class=\"ds-badge ds-badge-sea\">Κτίριο 1</span>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-badge{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:9999px;background:var(--ok-bg);color:var(--ok);font:600 12px \"Source Sans 3\",system-ui,sans-serif;white-space:nowrap;} .ds-dot{width:6px;height:6px;border-radius:9999px;background:var(--ok);} .ds-badge-stone{background:rgb(162 163 154 / 0.2);color:var(--stone-ink);} .ds-badge-sea{background:rgb(21 107 168 / 0.08);color:var(--sea);}"
+    },
+    {
+      "name": "Directory List",
+      "kind": "card",
+      "refersTo": "card-list",
+      "description": "Card of door rows: stone-ink Garamond code, sans headline, chevron.",
+      "html": "<ul class=\"ds-list\"><li><a class=\"ds-row\" href=\"#\"><span class=\"ds-code\">1.1.1</span><span><span class=\"ds-h\">Καλλονιάτης Χρήστος</span><span class=\"ds-s\">Καθηγητής</span></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></a></li><li><a class=\"ds-row\" href=\"#\"><span class=\"ds-code\">1.2.4</span><span><span class=\"ds-h\">Εργαστήριο Πολυμέσων</span><span class=\"ds-s\">Εργαστήριο</span></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></a></li></ul>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-list{list-style:none;margin:0;padding:0;max-width:420px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:var(--shadow-card);} .ds-list li+li{border-top:1px solid rgb(224 224 217 / 0.8);} .ds-row{display:grid;grid-template-columns:4.25rem 1fr auto;align-items:center;gap:12px;min-height:64px;padding:12px 16px;text-decoration:none;color:var(--line-strong);transition:background-color 150ms,color 150ms;} .ds-row:hover{background:rgb(244 244 240 / 0.7);color:var(--sea);} .ds-row:focus-visible{outline:2px solid var(--sea-2);outline-offset:2px;} .ds-code{font:500 22px/1 \"EB Garamond\",Georgia,serif;font-variant-numeric:lining-nums tabular-nums;color:var(--stone-ink);} .ds-h{display:block;font:600 16px/1.35 \"Source Sans 3\",system-ui,sans-serif;color:var(--ink);} .ds-s{display:block;font:400 14px \"Source Sans 3\",system-ui,sans-serif;color:var(--muted);}"
+    },
+    {
+      "name": "Contact Action",
+      "kind": "button",
+      "refersTo": "contact-action-primary",
+      "description": "The door page primary: sea field, stone icon disc, label over the number.",
+      "html": "<a class=\"ds-contact\" href=\"#\"><span class=\"ds-disc\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg></span><span><span class=\"ds-cl\">Κλήση</span><span class=\"ds-cv\">22510 36637</span></span></a>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-contact{display:flex;align-items:center;gap:14px;min-height:68px;max-width:360px;padding:0 16px;border-radius:16px;background:var(--sea);color:#fff;text-decoration:none;box-shadow:var(--shadow-card);transition:background-color 150ms;font-family:\"Source Sans 3\",system-ui,sans-serif;} .ds-contact:hover{background:var(--sea-2);} .ds-contact:active{background:var(--sea-deep);} .ds-contact:focus-visible{outline:2px solid var(--stone-soft);outline-offset:2px;} .ds-disc{display:grid;place-items:center;width:40px;height:40px;border-radius:9999px;background:var(--stone);color:var(--sea-deep);flex-shrink:0;} .ds-cl{display:block;font-size:13px;font-weight:600;color:rgb(255 255 255 / 0.9);} .ds-cv{display:block;font-size:17px;font-weight:600;font-variant-numeric:lining-nums tabular-nums;}"
+    },
+    {
+      "name": "Admin Rail",
+      "kind": "nav",
+      "description": "Deep-sea rail; links white/75, active gets a white/9 fill and a stone-soft icon.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rl\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/></svg>Επισκόπηση</a><a class=\"ds-rl ds-on\" href=\"#\" aria-current=\"page\"><span class=\"ds-ic\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/></svg></span>Χώροι</a><a class=\"ds-rl\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/></svg>Κτίρια</a></nav>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} .ds-rail{display:flex;flex-direction:column;gap:2px;width:16rem;padding:12px;background:var(--sea-deep);font-family:\"Source Sans 3\",system-ui,sans-serif;} .ds-rl{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:8px;color:rgb(255 255 255 / 0.75);font-size:15px;font-weight:600;text-decoration:none;transition:background-color 150ms,color 150ms;} .ds-rl:hover{background:rgb(255 255 255 / 0.05);color:#fff;} .ds-rl:focus-visible{outline:2px solid var(--stone-soft);outline-offset:2px;} .ds-on{background:rgb(255 255 255 / 0.09);color:#fff;} .ds-ic{display:inline-flex;color:var(--stone-soft);}"
+    },
+    {
+      "name": "Door Plate",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The signature: sea field, stone-soft numeral, engraving stone hairline, white name, 6px stone bar.",
+      "html": "<div class=\"ds-plate\"><div class=\"ds-pi\"><div class=\"ds-top\"><p class=\"ds-num\">1.1.1</p><div class=\"ds-meta\">Γραφείο<br>Κτίριο 1</div></div><div class=\"ds-rule\"></div><h1 class=\"ds-name\">Καλλονιάτης Χρήστος</h1><p class=\"ds-sub\">Καθηγητής</p></div><div class=\"ds-bar\"></div></div>",
+      "css": ":host{--sea:#156ba8;--sea-deep:#0d4c7c;--sea-2:#1a74b5;--stone:#a2a39a;--stone-soft:#dcddd5;--stone-ink:#5f6058;--ink:#15222e;--muted:#565b62;--paper:#f4f4f0;--paper-2:#eaeae4;--card:#fdfdfb;--line:#e0e0d9;--line-strong:#c8c9c0;--ok:#2d6a43;--ok-bg:#e5f0e6;--danger:#a1302a;--danger-bg:#f8e6e3;--shadow-card:0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);--shadow-lift:0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);} @keyframes ds-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}} .ds-plate{background:var(--sea);color:#fff;max-width:420px;} .ds-pi{padding:28px 16px 32px;} .ds-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;} .ds-num{margin:0;font:500 76px/0.82 \"EB Garamond\",Georgia,serif;letter-spacing:-0.02em;font-feature-settings:\"lnum\" 1,\"kern\" 1;font-variant-numeric:lining-nums tabular-nums;color:var(--stone-soft);} .ds-meta{padding-bottom:4px;text-align:right;font:600 13px/1.35 \"Source Sans 3\",system-ui,sans-serif;color:rgb(255 255 255 / 0.9);} .ds-rule{height:1px;margin:20px 0;background:rgb(162 163 154 / 0.8);transform-origin:left center;animation:ds-draw 900ms cubic-bezier(0.16,1,0.3,1) 120ms both;} .ds-name{margin:0;font:600 34px/1.05 \"EB Garamond\",Georgia,serif;letter-spacing:-0.01em;} .ds-sub{margin:8px 0 0;font:400 17px \"Source Sans 3\",system-ui,sans-serif;color:rgb(255 255 255 / 0.9);} .ds-bar{height:6px;background:var(--stone);} @media (prefers-reduced-motion:reduce){.ds-rule{animation:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Door Plate",
+    "overview": "The printed door plaque is the system. Every screen opens on a plate: a sea-blue field, a room numeral set large in pale stone Garamond, the occupant's name in white, a grey hairline that engraves itself in on first paint, and a 6px grey bar closing the field. Below the plate the world turns to neutral paper: near-white cards with hairline dividers, Source Sans 3 for everything a hand operates. The same plate appears on the phone at the door, in the back-office editor as a live preview, and on the PNG plaque that gets printed and screwed to the wall; the three are one object at three scales.\n\nThe palette is pinned to the ΤΠΤΕ department logo across the whole app: the logo's sea blue for fields and actions, the logo's grey for rules, bars and the printed QR. It replaces the earlier navy and gold; the character is otherwise kept. Density is low on public pages (one 42rem column, large tap targets, one primary action) and moderate in the back office (a 16rem deep-sea rail, card form sections, side-by-side Greek and English fields). The tone is academic and calm: no gradients on the plate, no glow, no decorative imagery. Depth is soft and sea-tinted on paper.",
+    "keyCharacteristics": [
+      "Sea-blue plate fields bounded by logo grey: hairline above the name, 6px bar below the field.",
+      "Room numerals in EB Garamond lining, tabular figures: stone-soft on sea, stone-ink on paper.",
+      "Names and titles in Garamond; every control, label and value in Source Sans 3.",
+      "Neutral paper ground, near-white cards, hairline dividers in pale stone.",
+      "Soft sea-tinted shadows; flat plate fields.",
+      "Bilingual Greek/English as the default layout, not a tab."
+    ],
+    "rules": [
+      {
+        "name": "The Two Stones Rule",
+        "body": "Stone on sea is stone-soft, and only at display size (numerals) or as icons and dots; stone on paper is stone-ink. Logo Stone itself is a fill (bars, rules, discs), never text.",
+        "section": "colors"
+      },
+      {
+        "name": "The White on Sea Rule",
+        "body": "Primary text on any sea field is white. Secondary text on a sea field is white at 90%; on a deep-sea field (masthead, rail, login) it is at least white at 75%. Nothing lighter carries words.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plate Owns the Sea Rule",
+        "body": "Large sea fields appear only as the plate, the home header, building cards on the home page, the masthead, the admin rail, the login field and transient bars (toast, save bar). Content cards on paper stay card-white.",
+        "section": "colors"
+      },
+      {
+        "name": "The Engraved and the Operated Rule",
+        "body": "Garamond is for numerals and names only. Buttons, inputs, labels, navigation and values are Source Sans 3. If you can tap it, it is sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lining Figures Rule",
+        "body": "Every room code, phone number and count uses lining tabular figures (`nums`). Oldstyle figures on a door number are a bug, including on the canvas plaque (the fonts must be loaded before drawing).",
+        "section": "typography"
+      },
+      {
+        "name": "The Tinted Shadow Rule",
+        "body": "Shadows on paper are tinted with sea, never neutral grey or black. Use the two named elevations; do not invent a third.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** open every public page with the Plate: stone-soft numeral, stone hairline, white name, 6px stone bar.",
+      "**Do** set room codes and phone numbers with lining tabular figures (`nums`), in EB Garamond for codes.",
+      "**Do** use stone-soft for stone on sea (numerals, icons) and stone-ink for stone on paper.",
+      "**Do** keep secondary text on sea at white/90, and on deep sea at white/75 or stronger.",
+      "**Do** keep the one primary action per view: the sea button in the back office, the sea contact action on the door page.",
+      "**Do** use the named Card and Lift shadows, sea-tinted.",
+      "**Do** lay Greek and English fields side by side in editors.",
+      "**Do** make destructive actions two-step and inline."
+    ],
+    "donts": [
+      "**Don't** set buttons, inputs, labels or navigation in Garamond.",
+      "**Don't** use oldstyle figures for any code or number, on screen or on the plaque.",
+      "**Don't** use neutral grey or black shadows on paper, or add a third elevation.",
+      "**Don't** fill content cards on paper with sea; sea fields are the plate, the headers, the rail and transient bars.",
+      "**Don't** set Logo Stone or stone-soft as label- or body-size text; stone-soft passes only at display size on sea.",
+      "**Don't** bring back the navy and gold palette or the gold-ringed seal on the plaque; the palette is the ΤΠΤΕ logo's.",
+      "**Don't** add gradients, glows or decorative imagery to the plate; its ornament is the stone rule."
+    ]
+  }
+}

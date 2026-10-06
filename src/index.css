@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@import "@fontsource/eb-garamond/500.css";
+@import "@fontsource/eb-garamond/600.css";
+@import "@fontsource/source-sans-3/400.css";
+@import "@fontsource/source-sans-3/500.css";
+@import "@fontsource/source-sans-3/600.css";
+@import "@fontsource/source-sans-3/700.css";
+
+/*
+ * Aegean signage: the printed door plaque is the system.
+ * Palette from the ΤΠΤΕ logo: its sea blue for fields, its grey for rules,
+ * neutral paper, Garamond for names and numerals.
+ */
+:root {
+  --sea: #156ba8; /* logo blue: plate fields, primary actions, links */
+  --sea-deep: #0d4c7c; /* masthead, sidebar, pressed states */
+  --sea-2: #1a74b5; /* hover on sea */
+  --stone: #a2a39a; /* logo grey: rules and bars */
+  --stone-soft: #dcddd5; /* numerals on sea (≥3:1 at display size) */
+  --stone-ink: #5f6058; /* numerals on paper */
+  --ink: #15222e;
+  --muted: #565b62;
+  --paper: #f4f4f0;
+  --paper-2: #eaeae4;
+  --card: #fdfdfb;
+  --line: #e0e0d9;
+  --line-strong: #c8c9c0;
+  --ok: #2d6a43;
+  --ok-bg: #e5f0e6;
+  --danger: #a1302a;
+  --danger-bg: #f8e6e3;
+  --warn: #8a5a00;
+  --warn-bg: #fbefd2;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-sea: var(--sea);
+  --color-sea-deep: var(--sea-deep);
+  --color-sea-2: var(--sea-2);
+  --color-stone: var(--stone);
+  --color-stone-soft: var(--stone-soft);
+  --color-stone-ink: var(--stone-ink);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-display: "EB Garamond", Georgia, "Times New Roman", serif;
+  --shadow-card: 0 1px 2px rgb(16 52 82 / 0.05), 0 8px 24px -12px rgb(16 52 82 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(16 52 82 / 0.06), 0 18px 40px -18px rgb(16 52 82 / 0.35);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--sea) 22%, white);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--sea-2);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  .on-sea :focus-visible {
+    outline-color: var(--stone-soft);
+  }
+  input,
+  textarea,
+  select {
+    caret-color: var(--sea-2);
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  select,
+  label[for] {
+    cursor: pointer;
+  }
+  * {
+    scrollbar-color: var(--line-strong) transparent;
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "lnum" 1, "kern" 1;
+}
+
+@utility select-chevron {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23565b62' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 12px;
+}
+
+/* Lining, tabular numerals for room codes and data */
+@utility nums {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* The stone rule that "engraves" under a plate on first paint */
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@utility animate-rule {
+  transform-origin: left center;
+  animation: rule-draw 900ms var(--ease-out-expo) 120ms both;
+}
+@utility animate-rise {
+  animation: rise 520ms var(--ease-out-expo) both;
+}
+@utility skeleton {
+  background: linear-gradient(90deg, var(--paper-2) 0%, #f8f8f5 50%, var(--paper-2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Google Website Translator: keep the gadget off-screen; our own picker drives it */
+#google_translate_element {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.skiptranslate iframe.skiptranslate {
+  display: none !important;
+}
+font > font {
+  background: transparent !important;
+  box-shadow: none !important;
+}

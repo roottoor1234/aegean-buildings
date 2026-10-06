@@ -1,88 +1,115 @@
 export type Lang = "el" | "en";
-
-export type LocalizedBuilding = {
-  name: string;
-  island: string;
-  school: string;
-  departments: string[];
-  address: string;
-  rooms: string[];
-  offices: string[];
-  services: string[];
-  notes?: string;
-};
-
-export type Building = {
-  id: string;
-  published: boolean;
-  buildingCode?: string;
-  phone?: string;
-  email?: string;
-  website?: string;
-  lat?: number;
-  lng?: number;
-  el: LocalizedBuilding;
-  en: LocalizedBuilding;
-};
-
-export type BuildingsFile = Building[];
+export type Role = "admin" | "user";
+export type OfficeKind = "office" | "lab" | "room";
 
 export type LocalizedOffice = {
   label: string;
   occupant: string;
   title: string;
-  building: string;
   department: string;
-  notes?: string;
+  notes: string;
 };
 
 export type Office = {
   id: string;
   code: string;
-  buildingCode: string;
-  buildingId?: string;
+  buildingId: string | null;
+  kind: OfficeKind;
   published: boolean;
-  kind: "office" | "lab" | "room";
-  phone?: string;
-  email?: string;
+  phone: string;
+  email: string;
   el: LocalizedOffice;
   en: LocalizedOffice;
+  updatedAt?: string | null;
+  updatedBy?: string | null;
 };
 
-export const EMPTY_LOCALIZED: LocalizedBuilding = {
-  name: "",
-  island: "",
-  school: "",
-  departments: [],
-  address: "",
-  rooms: [],
-  offices: [],
-  services: [],
+export type LocalizedBuilding = {
+  name: string;
+  island: string;
+  school: string;
+  address: string;
+  notes: string;
+  departments: string[];
+};
+
+export type Building = {
+  id: string;
+  code: string;
+  published: boolean;
+  phone: string;
+  email: string;
+  website: string;
+  lat: number | null;
+  lng: number | null;
+  el: LocalizedBuilding;
+  en: LocalizedBuilding;
+  updatedAt?: string | null;
+  updatedBy?: string | null;
+};
+
+export type User = {
+  id: number;
+  name: string;
+  email: string;
+  role: Role;
+  active: boolean;
+  lastLoginAt: string | null;
+  createdAt: string | null;
+};
+
+export type Activity = {
+  id: number;
+  action: "create" | "update" | "delete";
+  entity: "office" | "building" | "user";
+  entityId: string | null;
+  summary: string;
+  createdAt: string;
+  userName: string | null;
+};
+
+const emptyOfficeText = (): LocalizedOffice => ({
+  label: "",
+  occupant: "",
+  title: "",
+  department: "",
   notes: "",
-};
+});
 
-export function createEmptyBuilding(id: string): Building {
+export function emptyOffice(): Office {
   return {
-    id,
-    published: true,
+    id: "",
+    code: "",
+    buildingId: null,
+    kind: "office",
+    published: false,
     phone: "",
     email: "",
-    website: "",
-    el: { ...EMPTY_LOCALIZED, departments: [], rooms: [], offices: [], services: [] },
-    en: { ...EMPTY_LOCALIZED, departments: [], rooms: [], offices: [], services: [] },
+    el: { ...emptyOfficeText(), department: "Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας" },
+    en: { ...emptyOfficeText(), department: "Department of Cultural Technology and Communication" },
   };
 }
 
-export function createEmptyOffice(id: string): Office {
+const emptyBuildingText = (): LocalizedBuilding => ({
+  name: "",
+  island: "",
+  school: "",
+  address: "",
+  notes: "",
+  departments: [],
+});
+
+export function emptyBuilding(): Building {
   return {
-    id,
+    id: "",
     code: "",
-    buildingCode: "",
-    published: true,
-    kind: "office",
+    published: false,
     phone: "",
     email: "",
-    el: { label: "", occupant: "", title: "", building: "", department: "", notes: "" },
-    en: { label: "", occupant: "", title: "", building: "", department: "", notes: "" },
+    website: "",
+    lat: null,
+    lng: null,
+    el: emptyBuildingText(),
+    en: emptyBuildingText(),
   };
 }

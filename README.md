@@ -1,90 +1,82 @@
-# Ψηφιακή Σήμανση ΤΠΤΕ — Πανεπιστήμιο Αιγαίου
+# Ψηφιακή Σήμανση ΤΠΤΕ · Πανεπιστήμιο Αιγαίου
 
-QR σε πόρτες γραφείων / εργαστηρίων που ανοίγουν **μόνιμη ιστοσελίδα** στο κινητό.
-
-Το QR περιέχει μόνο το URL (π.χ. `/o/1.1.1`). Αλλάζεις όνομα ή τηλέφωνο από το admin **χωρίς νέα εκτύπωση**.
-
-## Ροή
-
-**Σάρωση QR → σελίδα γραφείου → πληροφορίες**
-
-- Γλώσσα από το browser (EL / EN από τα δεδομένα)
-- Προαιρετικά: κουμπί **Μετάφραση** (Google) μόνο στις δημόσιες σελίδες QR
-
-Παράδειγμα: `https://yourdomain.com/o/1.1.1`
+Μόνιμα QR στις πόρτες γραφείων και εργαστηρίων. Το QR περιέχει μόνο ένα URL (π.χ. `/o/1.1.1`). Όνομα, ιδιότητα ή τηλέφωνο αλλάζουν από τη διαχείριση **χωρίς νέα εκτύπωση**.
 
 ## Stack
 
-- Next.js 15 + React 19 + Tailwind CSS 4
-- Supabase (Postgres) για live δεδομένα
-- Branded QR plaques (λήψη PNG)
-
-## Τρέξιμο τοπικά
-
-```bash
-npm install
-cp .env.example .env.local
-# συμπλήρωσε SUPABASE_URL και SUPABASE_PUBLISHABLE_KEY
-npm run dev
-```
-
-Η εφαρμογή ακούει στο `http://localhost:4731`.
-
-| Διαδρομή | Ρόλος |
+| Επίπεδο | Τεχνολογία |
 | --- | --- |
-| `/` | Κατάλογος χώρων + λήψη branded QR |
-| `/o/1.1.1` | Δημόσια σελίδα γραφείου / εργαστηρίου |
-| `/b/1` | Σελίδα κτιρίου με λίστα χώρων |
-| `/admin` | CMS επεξεργασίας |
-| `/api/offices` | GET/PUT χώρων |
-| `/api/buildings` | GET/PUT κτιρίων |
+| Frontend | Vite 6 · React 19 · TypeScript · Tailwind CSS 4 · React Router 7 |
+| Backend | PHP 8 (χωρίς framework): PDO, sessions, CSRF |
+| Βάση | MySQL / MariaDB (XAMPP) |
 
-## Βάση (Supabase) — μία φορά
+## Ρόλοι
 
-1. Άνοιξε το [SQL Editor](https://supabase.com/dashboard) του project σου
-2. Τρέξε το [`supabase/schema.sql`](supabase/schema.sql)
-3. Seed από τα τοπικά JSON:
-
-```bash
-npm run seed
-```
-
-Μετά το seed, το `/admin` αποθηκεύει live στη βάση.
-
-Τα αρχεία `data/offices.json` και `data/buildings.json` μένουν ως backup / αρχικό seed.
-
-## Environment variables
-
-Δες [`.env.example`](.env.example):
-
-| Variable | Περιγραφή |
+| Ρόλος | Τι κάνει |
 | --- | --- |
-| `SUPABASE_URL` | URL project Supabase (server-only) |
-| `SUPABASE_PUBLISHABLE_KEY` | Publishable / anon key (server-only) |
-| `SITE_URL` | (προαιρετικό) δημόσιο domain για QR σε production |
+| **Επισκέπτης** (χωρίς σύνδεση) | Βλέπει τις δημοσιευμένες σελίδες `/`, `/o/…`, `/b/…` |
+| **user** · Χρήστης προβολής | Μπαίνει στο `/admin`: επισκόπηση, πινακίδες QR, λήψη PNG. Δεν αλλάζει τίποτα. |
+| **admin** · Διαχειριστής | Τα παραπάνω, και επεξεργασία χώρων και κτιρίων, και διαχείριση χρηστών |
 
-**Μην** κάνεις commit το `.env.local`.
+Οι κανόνες ελέγχονται **στον server** (`require_role()` σε κάθε endpoint). Το UI απλώς κρύβει ό,τι δεν επιτρέπεται. Δεν μπορείτε να αφαιρέσετε τον ρόλο admin από τον εαυτό σας, και το σύστημα δεν μένει ποτέ χωρίς ενεργό διαχειριστή.
 
-Στο Vercel βάλε τα ως **Encrypted / Sensitive** (χωρίς prefix `NEXT_PUBLIC_`).
+## Τοπικά (XAMPP)
 
-## Deploy (Vercel)
+1. Ξεκινήστε το **MySQL** από το XAMPP Control Panel.
+2. Ρυθμίσεις και βάση:
+   ```bash
+   npm install
+   cp backend/.env.example backend/.env     # βάλτε ADMIN_PASSWORD (≥ 8 χαρακτήρες)
+   npm run db:setup                          # δημιουργεί DB, πίνακες, seed από data/*.json, admin
+   php backend/db/setup.php --demo-user      # (προαιρετικό) user@aegean.gr / user12345
+   ```
+3. Εκκίνηση (PHP στο :8000 και Vite στο :4731 μαζί):
+   ```bash
+   npm run dev
+   ```
+   Ανοίξτε `http://localhost:4731`. Η διαχείριση είναι στο `/admin`.
 
-1. Import το repo στο Vercel
-2. Βάλε τα ίδια env vars
-3. Deploy
-4. Εκτύπωσε QR με το production URL, π.χ. `https://your-app.vercel.app/o/1.1.1`
+Το `setup.php` μπορεί να ξανατρέξει με ασφάλεια: φορτώνει δεδομένα μόνο σε άδειους πίνακες.
 
-## Scripts
+## Διαδρομές
+
+| Διαδρομή | Περιγραφή |
+| --- | --- |
+| `/` | Δημόσιος κατάλογος με αναζήτηση |
+| `/o/1.1.1` | Σελίδα πόρτας (αυτό ανοίγει το QR) |
+| `/b/1` | Σελίδα κτιρίου με τους χώρους του |
+| `/login` | Είσοδος προσωπικού |
+| `/admin` | Επισκόπηση: τι χρειάζεται προσοχή, πρόσφατες αλλαγές |
+| `/admin/plaques` | Πινακίδες QR και λήψη PNG (όλοι οι ρόλοι) |
+| `/admin/spaces`, `/admin/buildings`, `/admin/users` | Μόνο admin |
+
+### API (`backend/api/`)
+
+| Endpoint | Πρόσβαση |
+| --- | --- |
+| `public/directory.php`, `public/office.php?slug=`, `public/building.php?slug=` | δημόσιο (μόνο δημοσιευμένα) |
+| `auth/me.php`, `auth/login.php`, `auth/logout.php`, `auth/password.php` | session |
+| `offices.php`, `buildings.php` | GET: admin, user · POST/PUT/DELETE: admin |
+| `users.php` | admin |
+| `activity.php` | admin, user |
+
+## Deploy σε Apache / XAMPP
 
 ```bash
-npm run dev      # development
-npm run build    # production build
-npm run start    # production server
-npm run seed     # seed Supabase από data/*.json
-npm run lint     # eslint
+npm run build
 ```
 
-## Σημειώσεις
+Αντιγράψτε στο document root (π.χ. `C:\xampp\htdocs\signage\`):
 
-- Τα δημόσια URL βασίζονται στον **κωδικό χώρου** (`/o/1.1.1`), όχι σε random id. Τα παλιά `/o/<id>` κάνουν redirect.
-- Το Google Translate εμφανίζεται μόνο στις σελίδες `/o/...` και `/b/...`.
+```
+dist/*            → signage/            (index.html, assets/, .htaccess)
+backend/api       → signage/api
+backend/lib       → signage/lib         (έχει .htaccess: Require all denied)
+backend/db        → signage/db          (έχει .htaccess: Require all denied)
+backend/.env      → signage/.env
+data/             → data/               (μόνο για το αρχικό setup)
+```
+
+Σε υποφάκελο, χτίστε με `VITE_BASE=/signage/ npm run build`. Σε production βάλτε HTTPS: το session cookie γίνεται αυτόματα `Secure`.
+
+**Πριν τυπώσετε QR:** ανοίξτε τη διαχείριση από το τελικό domain. Τα QR χρησιμοποιούν το origin του browser.

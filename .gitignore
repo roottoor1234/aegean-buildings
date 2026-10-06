@@ -1,10 +1,7 @@
 # Dependencies
 node_modules/
 
-# Next.js
-.next/
-out/
-build/
+# Build
 dist/
 
 # Env / secrets
@@ -20,7 +17,6 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
-next-env.d.ts
 
 # OS / IDE
 .DS_Store
@@ -33,5 +29,8 @@ Thumbs.db
 # Local / temp
 *.local
 .turbo/
-.vercel/
 coverage/
+
+# Design review captures / browser tooling
+.impeccable/review/
+.playwright-mcp/

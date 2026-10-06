@@ -1,34 +1,36 @@
 {
   "name": "aegean-building-info",
-  "version": "0.1.0",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev -p 4731 -H 0.0.0.0",
-    "build": "next build",
-    "start": "next start -p 4731 -H 0.0.0.0",
-    "lint": "eslint",
-    "seed": "npx tsx --env-file=.env.local scripts/seed-supabase.ts"
+    "dev": "concurrently -k -n php,vite -c blue,green \"npm:dev:php\" \"npm:dev:vite\"",
+    "dev:vite": "vite",
+    "dev:php": "php -S 0.0.0.0:8000 -t backend",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "db:setup": "php backend/db/setup.php"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.116.0",
-    "next": "^15.5.9",
-    "papaparse": "^5.7.0",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.0",
+    "lucide-react": "^1.52.0",
     "qrcode": "^1.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^7.18.4"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/papaparse": "^5.5.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
     "@types/qrcode": "^1.5.6",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.4",
-    "tailwindcss": "^4",
-    "tsx": "^4.23.15",
-    "typescript": "^5"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^10.0.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.3"
   }
 }
