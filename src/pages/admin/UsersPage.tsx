@@ -9,8 +9,8 @@ import { Badge, Button, ConfirmButton, ErrorNotice, Field, Select, Skeleton, Swi
 import { AdminPage, ROLE_LABEL } from "./AdminLayout";
 
 const ROLE_HELP: Record<Role, string> = {
-  admin: "Επεξεργάζεται χώρους, κτίρια και χρήστες.",
-  user: "Βλέπει τις πινακίδες και τις κατεβάζει. Δεν αλλάζει τίποτα.",
+  admin: "Πλήρης διαχείριση περιεχομένου και χρηστών.",
+  user: "Προβολή και λήψη πινακίδων.",
 };
 
 type Draft = { name: string; email: string; role: Role; active: boolean; password: string };
@@ -32,7 +32,6 @@ export default function UsersPage() {
   return (
     <AdminPage
       title="Χρήστες"
-      description="Δύο ρόλοι: ο διαχειριστής αλλάζει περιεχόμενο, ο χρήστης προβολής μόνο βλέπει και κατεβάζει πινακίδες."
       actions={
         editing !== "new" ? (
           <Button variant="primary" icon={<Plus className="size-4" />} onClick={() => setEditing("new")}>
@@ -53,7 +52,7 @@ export default function UsersPage() {
               const u = await api.createUser(d);
               res.set((list) => [...list, u]);
               setEditing(null);
-              toast("ok", `Ο λογαριασμός για ${u.name} δημιουργήθηκε. Στείλτε του τον κωδικό με ασφαλή τρόπο.`);
+              toast("ok", `Ο λογαριασμός ${u.name} δημιουργήθηκε.`);
             }}
           />
         </div>
@@ -185,7 +184,7 @@ function UserForm({
         <Field label="Email (για σύνδεση)" error={err("email")}>
           {(p) => <TextInput {...p} type="email" value={d.email} onChange={(e) => set({ email: e.target.value })} required />}
         </Field>
-        <Field label="Ρόλος" error={err("role")} hint={lockRole ? (self ? "Δεν αλλάζετε τον δικό σας ρόλο." : "Είναι ο μόνος ενεργός διαχειριστής.") : ROLE_HELP[d.role]}>
+        <Field label="Ρόλος" error={err("role")} hint={lockRole ? (self ? "Ο δικός σας ρόλος δεν αλλάζει." : "Μοναδικός ενεργός διαχειριστής.") : ROLE_HELP[d.role]}>
           {(p) => (
             <Select {...p} value={d.role} disabled={lockRole} onChange={(e) => set({ role: e.target.value as Role })}>
               <option value="user">{ROLE_LABEL.user}</option>
@@ -193,8 +192,8 @@ function UserForm({
             </Select>
           )}
         </Field>
-        <Field label={creating ? "Αρχικός κωδικός" : "Νέος κωδικός"} error={err("password")} hint={creating ? "Τουλάχιστον 8 χαρακτήρες" : "Αφήστε κενό για να μείνει ο ίδιος"}>
-          {(p) => <TextInput {...p} type="text" autoComplete="new-password" value={d.password} onChange={(e) => set({ password: e.target.value })} required={creating} minLength={8} />}
+        <Field label={creating ? "Αρχικός κωδικός" : "Νέος κωδικός"} error={err("password")} hint={creating ? "Τουλάχιστον 10 χαρακτήρες" : "Κενό: δεν αλλάζει"}>
+          {(p) => <TextInput {...p} type="text" autoComplete="new-password" value={d.password} onChange={(e) => set({ password: e.target.value })} required={creating} minLength={10} />}
         </Field>
       </div>
       {!creating ? (
@@ -204,7 +203,7 @@ function UserForm({
             disabled={lockRole}
             onChange={(active) => set({ active })}
             label="Ενεργός λογαριασμός"
-            description="Ένας ανενεργός χρήστης δεν μπορεί να συνδεθεί, αλλά το ιστορικό του μένει."
+            description="Ο ανενεργός λογαριασμός δεν μπορεί να συνδεθεί."
           />
         </div>
       ) : null}

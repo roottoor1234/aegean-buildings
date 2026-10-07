@@ -111,13 +111,13 @@ export default function BuildingEditorPage() {
       <div className="max-w-4xl space-y-6">
         {fieldError?.field ? <ErrorNotice message={fieldError.message} /> : null}
 
-        <FormSection title="Ταυτότητα" description="Ο κωδικός είναι το μόνιμο URL του κτιρίου.">
+        <FormSection title="Ταυτότητα">
           <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
             <Field label="Κωδικός" error={err("code")} hint={<span className="nums">/b/{draft.code || "…"}</span>}>
               {(p) => <TextInput {...p} value={draft.code} onChange={(e) => set({ code: e.target.value })} className="nums font-display text-lg" placeholder="1" />}
             </Field>
             <div className="sm:pt-7">
-              <Switch checked={draft.published} onChange={(published) => set({ published })} label="Δημοσιευμένο" description="Μη δημοσιευμένο κτίριο κρύβεται από τον κατάλογο." />
+              <Switch checked={draft.published} onChange={(published) => set({ published })} label="Δημοσιευμένο" description="Ορατό στον δημόσιο κατάλογο." />
             </div>
           </div>
           {codeChanged ? (
@@ -146,7 +146,7 @@ export default function BuildingEditorPage() {
         <FormSection title="Τοποθεσία & επικοινωνία">
           <BilingualField label="Διεύθυνση" el={draft.el.address} en={draft.en.address} onChange={(l, v) => setLoc(l, "address", v)} />
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Γεωγρ. πλάτος" error={err("lat")} hint="Για το κουμπί χάρτη, π.χ. 39.0845">
+            <Field label="Γεωγρ. πλάτος" error={err("lat")} hint="π.χ. 39.0845">
               {(p) => <CoordInput {...p} value={draft.lat} onValue={(lat) => set({ lat })} />}
             </Field>
             <Field label="Γεωγρ. μήκος" error={err("lng")} hint="π.χ. 26.5672">
@@ -168,7 +168,7 @@ export default function BuildingEditorPage() {
           <section className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-danger/20 px-5 py-4">
             <div>
               <h2 className="text-base font-semibold text-ink">Διαγραφή κτιρίου</h2>
-              <p className="text-[0.8125rem] text-muted">Οι χώροι του δεν διαγράφονται· μένουν χωρίς κτίριο.</p>
+              <p className="text-[0.8125rem] text-muted">Οι χώροι του δεν διαγράφονται.</p>
             </div>
             <ConfirmButton
               onConfirm={async () => {

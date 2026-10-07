@@ -57,7 +57,7 @@ export default function AccountPage() {
             </div>
           </dl>
           {user.role === "user" ? (
-            <p className="text-[0.875rem] text-muted">Έχετε πρόσβαση προβολής: βλέπετε και κατεβάζετε πινακίδες. Για αλλαγές στο περιεχόμενο, απευθυνθείτε σε διαχειριστή.</p>
+            <p className="text-[0.875rem] text-muted">Δικαίωμα προβολής. Για αλλαγές περιεχομένου απευθυνθείτε στον διαχειριστή.</p>
           ) : null}
         </FormSection>
 
@@ -68,8 +68,8 @@ export default function AccountPage() {
               {(p) => <TextInput {...p} type="password" autoComplete="current-password" value={current} onChange={(e) => setCurrent(e.target.value)} required />}
             </Field>
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Νέος κωδικός" error={err("next")} hint="Τουλάχιστον 8 χαρακτήρες">
-                {(p) => <TextInput {...p} type="password" autoComplete="new-password" value={next} onChange={(e) => setNext(e.target.value)} required minLength={8} />}
+              <Field label="Νέος κωδικός" error={err("next")} hint="Τουλάχιστον 10 χαρακτήρες">
+                {(p) => <TextInput {...p} type="password" autoComplete="new-password" value={next} onChange={(e) => setNext(e.target.value)} required minLength={10} />}
               </Field>
               <Field label="Επανάληψη" error={err("repeat")}>
                 {(p) => <TextInput {...p} type="password" autoComplete="new-password" value={repeat} onChange={(e) => setRepeat(e.target.value)} required />}

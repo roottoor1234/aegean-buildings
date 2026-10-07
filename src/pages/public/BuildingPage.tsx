@@ -95,7 +95,6 @@ export default function BuildingPage() {
           {groups.length === 0 ? (
             <p className="rounded-2xl border border-dashed border-line-strong px-5 py-8 text-center text-muted">
               {copy.noResults}
-              <span className="mt-1 block text-sm">{copy.noResultsHint}</span>
             </p>
           ) : (
             <div className="space-y-6">

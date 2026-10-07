@@ -105,7 +105,6 @@ export default function HomePage() {
           ) : res.status === "ok" ? (
             <p className="rounded-2xl border border-dashed border-line-strong px-5 py-10 text-center text-muted">
               <span className="font-display block text-xl font-semibold text-ink">{copy.noResults}</span>
-              <span className="mt-1 block text-sm">{copy.noResultsHint}</span>
             </p>
           ) : null}
         </section>

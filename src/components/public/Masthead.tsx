@@ -4,6 +4,7 @@ import type { Lang } from "@/lib/types";
 import { t } from "@/lib/i18n";
 
 const logo = `${import.meta.env.BASE_URL}assets/logo-aegean.png`;
+const lockup = `${import.meta.env.BASE_URL}assets/lockup-uoa-ctc.jpg`;
 
 /** University lockup strip shared by every public page. */
 export function Masthead({ lang, right }: { lang: Lang; right?: ReactNode }) {
@@ -29,19 +30,22 @@ export function PublicFooter({ lang, updatedAt }: { lang: Lang; updatedAt?: stri
   const copy = t(lang);
   return (
     <footer className="mx-auto max-w-2xl px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-10 sm:px-6">
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-line pt-5 text-[0.8125rem] text-muted">
-        <p>
-          {copy.brand} · {copy.department}
-          {updatedAt ? (
-            <>
-              <br />
-              {copy.permanent} · {copy.updated} {updatedAt}
-            </>
-          ) : null}
-        </p>
-        <Link to="/login" className="font-semibold text-sea underline decoration-line-strong hover:decoration-sea">
-          {copy.staffSignIn}
-        </Link>
+      <div className="border-t border-line pt-6">
+        {/* Official lockup (navy on white); multiply drops the white into the paper ground */}
+        <img
+          src={lockup}
+          alt={`${copy.brand} · ${copy.school} · ${copy.department}`}
+          width={722}
+          height={96}
+          loading="lazy"
+          className="h-auto w-full max-w-[26rem] mix-blend-multiply"
+        />
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-[0.8125rem] text-muted">
+          <p>{updatedAt ? `${copy.permanent} · ${copy.updated} ${updatedAt}` : copy.permanent}</p>
+          <Link to="/login" className="font-semibold text-sea underline decoration-line-strong hover:decoration-sea">
+            {copy.staffSignIn}
+          </Link>
+        </div>
       </div>
     </footer>
   );

@@ -23,18 +23,21 @@ type Method = "GET" | "POST" | "PUT" | "DELETE";
 async function request<T>(method: Method, path: string, body?: unknown, retried = false): Promise<T> {
   let res: Response;
   try {
+    // PUT/DELETE travel as POST + override header: shared hosts often block those verbs outright
+    const override = method === "PUT" || method === "DELETE";
     res = await fetch(`${BASE}/${path}`, {
-      method,
+      method: override ? "POST" : method,
       credentials: "same-origin",
       headers: {
         Accept: "application/json",
+        ...(override ? { "X-HTTP-Method-Override": method } : {}),
         ...(body !== undefined ? { "Content-Type": "application/json" } : {}),
         ...(method !== "GET" && csrfToken ? { "X-CSRF-Token": csrfToken } : {}),
       },
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
   } catch {
-    throw new ApiError("Δεν υπάρχει σύνδεση με τον διακομιστή. Ελέγξτε το δίκτυο και δοκιμάστε ξανά.", 0);
+    throw new ApiError("Δεν υπάρχει σύνδεση με τον διακομιστή.", 0);
   }
 
   // Ληγμένο CSRF token: ανανέωση μία φορά και επανάληψη
@@ -49,7 +52,12 @@ async function request<T>(method: Method, path: string, body?: unknown, retried 
   try {
     data = text ? JSON.parse(text) : null;
   } catch {
-    throw new ApiError("Ο διακομιστής έστειλε μη αναμενόμενη απάντηση. Τρέχει το PHP backend;", res.status);
+    throw new ApiError(
+      res.status === 403
+        ? "Ο διακομιστής απέρριψε το αίτημα (403). Ενημερώστε τον διαχειριστή του συστήματος."
+        : `Μη αναμενόμενη απάντηση από τον διακομιστή (${res.status}). Δοκιμάστε ξανά.`,
+      res.status,
+    );
   }
   if (!res.ok) {
     const err = (data ?? {}) as { error?: string; field?: string };

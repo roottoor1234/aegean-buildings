@@ -6,6 +6,7 @@ import { ApiError } from "@/lib/api";
 import { Button, ErrorNotice, Field, TextInput } from "@/components/ui";
 
 const logo = `${import.meta.env.BASE_URL}assets/logo-aegean.png`;
+const banner = `${import.meta.env.BASE_URL}assets/banner-ctc.jpg`;
 
 export default function LoginPage() {
   const { user, ready, login, error: bootError } = useAuth();
@@ -52,21 +53,22 @@ export default function LoginPage() {
 
       <main className="relative flex flex-1 items-center justify-center px-5 pb-16 pt-4">
         <div className="grid w-full max-w-5xl items-center gap-12 lg:grid-cols-[1fr_26rem]">
-          <div className="hidden lg:block">
-            <p className="font-display nums text-[7.5rem] font-medium leading-[0.8] text-stone-soft">1.1.1</p>
-            <div className="animate-rule my-7 h-px w-full max-w-md bg-stone/70" aria-hidden />
-            <p className="font-display max-w-md text-5xl font-semibold leading-[1.04]">Η πινακίδα μένει. Η σελίδα πίσω της ενημερώνεται.</p>
-            <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-white/75">
-              Διαχείριση των μόνιμων QR του Τμήματος Πολιτισμικής Τεχνολογίας και Επικοινωνίας.
-            </p>
-          </div>
+          <figure className="hidden lg:block">
+            <img
+              src={banner}
+              alt="Τμήμα Πολιτισμικής Τεχνολογίας και Επικοινωνίας, Πανεπιστήμιο Αιγαίου"
+              width={900}
+              height={600}
+              className="h-auto w-full max-w-xl rounded-2xl shadow-[0_30px_80px_-30px_rgb(16_52_82/0.7)]"
+            />
+            <figcaption className="mt-4 text-[0.9375rem] font-semibold text-white/85">Ψηφιακή Σήμανση</figcaption>
+          </figure>
 
           <div className="overflow-hidden rounded-2xl bg-card text-ink shadow-[0_30px_80px_-30px_rgb(16_52_82/0.7)]">
             <div className="h-1.5 bg-stone" aria-hidden />
             <form onSubmit={submit} className="space-y-5 p-6 sm:p-8" noValidate>
               <div>
-                <h1 className="font-display text-[2rem] font-semibold leading-tight lg:text-3xl">Είσοδος προσωπικού</h1>
-                <p className="mt-1 text-[0.9375rem] text-muted">Με τον λογαριασμό που σας έδωσε ο διαχειριστής.</p>
+                <h1 className="font-display text-[2rem] font-semibold leading-tight">Σύνδεση</h1>
               </div>
 
               {bootError ? <ErrorNotice message={bootError} /> : null}
@@ -84,11 +86,10 @@ export default function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="h-11"
-                    placeholder="onoma@aegean.gr"
                   />
                 )}
               </Field>
-              <Field label="Κωδικός">
+              <Field label="Κωδικός πρόσβασης">
                 {(p) => (
                   <div className="relative">
                     <TextInput
@@ -116,7 +117,6 @@ export default function LoginPage() {
               <Button type="submit" variant="sea" size="lg" loading={busy} disabled={!ready || !email || !password} className="w-full">
                 {busy ? "Σύνδεση…" : "Σύνδεση"}
               </Button>
-              <p className="text-center text-[0.8125rem] text-muted">Ξεχάσατε τον κωδικό; Ζητήστε νέο από τον διαχειριστή.</p>
             </form>
           </div>
         </div>

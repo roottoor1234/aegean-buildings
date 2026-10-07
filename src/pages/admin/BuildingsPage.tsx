@@ -17,7 +17,6 @@ export default function BuildingsPage() {
   return (
     <AdminPage
       title="Κτίρια"
-      description="Κάθε κτίριο έχει δική του σελίδα (/b/1) με τη λίστα των χώρων του."
       actions={
         <ButtonLink to="/admin/buildings/new" variant="primary" icon={<Plus className="size-4" />}>
           Νέο κτίριο
@@ -32,7 +31,6 @@ export default function BuildingsPage() {
         </div>
       ) : buildings.length === 0 && res.status === "ok" ? (
         <EmptyState icon={<Building2 className="size-5" />} title="Δεν υπάρχουν κτίρια" action={<ButtonLink to="/admin/buildings/new" variant="primary">Προσθήκη κτιρίου</ButtonLink>}>
-          Οι χώροι οργανώνονται ανά κτίριο.
         </EmptyState>
       ) : (
         <ul className="grid gap-4 md:grid-cols-2">

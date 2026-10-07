@@ -9,15 +9,11 @@ import { useAsync } from "@/lib/useAsync";
 import { ButtonLink, ErrorNotice, Skeleton, cx } from "@/components/ui";
 import { AdminPage } from "./AdminLayout";
 
-function greeting() {
-  const h = new Date().getHours();
-  return h < 12 ? "Καλημέρα" : h < 19 ? "Καλησπέρα" : "Καλό βράδυ";
-}
 
 type Issue = { key: string; office: Office; reason: string; icon: ReactNode };
 
 export default function OverviewPage() {
-  const { user, can } = useAuth();
+  const { can } = useAuth();
   const res = useAsync(() => Promise.all([api.offices(), api.buildings(), api.activity(12)]), []);
 
   useEffect(() => {
@@ -30,18 +26,18 @@ export default function OverviewPage() {
   const issues = useMemo<Issue[]>(() => {
     const out: Issue[] = [];
     for (const o of offices) {
-      if (!o.published) out.push({ key: `${o.id}-d`, office: o, reason: "Πρόχειρο: το QR δείχνει «δεν βρέθηκε»", icon: <EyeOff className="size-4" /> });
+      if (!o.published) out.push({ key: `${o.id}-d`, office: o, reason: "Μη δημοσιευμένο", icon: <EyeOff className="size-4" /> });
       else if (!o.phone && !o.email) out.push({ key: `${o.id}-c`, office: o, reason: "Χωρίς τηλέφωνο ή email", icon: <PhoneOff className="size-4" /> });
       if ((o.el.occupant && !o.en.occupant) || (o.el.title && !o.en.title))
-        out.push({ key: `${o.id}-e`, office: o, reason: "Λείπει η αγγλική απόδοση", icon: <Languages className="size-4" /> });
-      if (!o.buildingId) out.push({ key: `${o.id}-b`, office: o, reason: "Δεν ανήκει σε κτίριο", icon: <Building2 className="size-4" /> });
+        out.push({ key: `${o.id}-e`, office: o, reason: "Χωρίς αγγλική απόδοση", icon: <Languages className="size-4" /> });
+      if (!o.buildingId) out.push({ key: `${o.id}-b`, office: o, reason: "Χωρίς κτίριο", icon: <Building2 className="size-4" /> });
     }
     return out;
   }, [offices]);
 
   return (
     <AdminPage
-      title={`${greeting()}, ${user?.name.split(" ")[0] ?? ""}`}
+      title="Επισκόπηση"
       description={
         res.status === "ok" ? (
           <span className="nums">
@@ -74,7 +70,7 @@ export default function OverviewPage() {
         <section className="rounded-xl border border-line bg-card shadow-[var(--shadow-card)]" aria-labelledby="attn-h">
           <header className="flex items-baseline justify-between gap-3 border-b border-line/80 px-5 py-4">
             <h2 id="attn-h" className="text-base font-semibold">
-              Χρειάζονται προσοχή
+              Εκκρεμότητες
             </h2>
             {res.status === "ok" ? <span className="nums text-[0.8125rem] font-semibold text-muted">{issues.length}</span> : null}
           </header>
@@ -87,7 +83,7 @@ export default function OverviewPage() {
           ) : issues.length === 0 ? (
             <div className="flex items-center gap-3 px-5 py-8 text-[0.9375rem] text-muted">
               <CircleCheck className="size-5 text-ok" />
-              Όλοι οι χώροι είναι δημοσιευμένοι, με στοιχεία επικοινωνίας και στις δύο γλώσσες.
+              Δεν εκκρεμεί καμία ενέργεια.
             </div>
           ) : (
             <ul className="max-h-[32rem] divide-y divide-line/70 overflow-y-auto">
@@ -135,7 +131,7 @@ export default function OverviewPage() {
               <Skeleton className="h-10" />
             </div>
           ) : activity.length === 0 ? (
-            <p className="px-5 py-8 text-[0.9375rem] text-muted">Καμία αλλαγή ακόμη. Κάθε αποθήκευση καταγράφεται εδώ, με το ποιος την έκανε.</p>
+            <p className="px-5 py-8 text-[0.9375rem] text-muted">Δεν υπάρχουν καταγεγραμμένες αλλαγές.</p>
           ) : (
             <ol className="relative px-5 py-4">
               {activity.map((a, idx) => (
@@ -188,10 +184,10 @@ function ViewerStart({ buildings, loading }: { buildings: { id: string; code: st
     <section className="overflow-hidden rounded-xl bg-sea text-white shadow-[var(--shadow-card)]" aria-labelledby="viewer-h">
       <div className="p-6">
         <h2 id="viewer-h" className="font-display text-2xl font-semibold">
-          Πινακίδες για εκτύπωση
+          Πινακίδες QR
         </h2>
         <p className="mt-1 max-w-md text-[0.9375rem] text-white/90">
-          Βρείτε έναν χώρο και κατεβάστε την πινακίδα του σε PNG, ή όλες μαζί ανά κτίριο. Ο λογαριασμός σας είναι μόνο για προβολή.
+          Προβολή και λήψη πινακίδων ανά κτίριο.
         </p>
         <div className="my-5 h-px bg-stone/60" aria-hidden />
         {loading ? (

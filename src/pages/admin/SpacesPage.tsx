@@ -139,7 +139,7 @@ export default function SpacesPage() {
         {res.status === "ok" && list.length === 0 ? (
           <EmptyState
             icon={<DoorOpen className="size-5" />}
-            title={offices.length ? "Κανένας χώρος δεν ταιριάζει" : "Δεν υπάρχουν ακόμη χώροι"}
+            title={offices.length ? "Κανένας χώρος δεν ταιριάζει" : "Δεν υπάρχουν χώροι"}
             action={
               offices.length ? undefined : (
                 <ButtonLink to="/admin/spaces/new" variant="primary" icon={<Plus className="size-4" />}>
@@ -148,7 +148,7 @@ export default function SpacesPage() {
               )
             }
           >
-            {offices.length ? "Δοκιμάστε μόνο το επώνυμο ή την αρίθμηση, ή καθαρίστε τα φίλτρα." : "Κάθε χώρος παίρνει μόνιμο URL και πινακίδα QR."}
+            {offices.length ? "Κανένα αποτέλεσμα για τα κριτήρια αναζήτησης." : undefined}
           </EmptyState>
         ) : null}
       </div>

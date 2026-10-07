@@ -87,7 +87,7 @@ export default function SpaceEditorPage() {
       const out = isNew ? await api.createOffice(draft) : await api.updateOffice(draft);
       setSaved(out);
       setDraft(out);
-      toast("ok", isNew ? "Ο χώρος δημιουργήθηκε" : "Οι αλλαγές αποθηκεύτηκαν και φαίνονται ήδη στη δημόσια σελίδα");
+      toast("ok", isNew ? "Ο χώρος δημιουργήθηκε" : "Οι αλλαγές αποθηκεύτηκαν");
       if (isNew) {
         allowLeave();
         navigate(`/admin/spaces/${out.id}`, { replace: true });
@@ -118,7 +118,7 @@ export default function SpaceEditorPage() {
       title={isNew ? "Νέος χώρος" : headline || "Χωρίς όνομα"}
       description={
         isNew ? (
-          "Συμπληρώστε τα στοιχεία. Το URL και το QR βγαίνουν από την αρίθμηση."
+          undefined
         ) : (
           <span className="inline-flex flex-wrap items-center gap-x-3 gap-y-1">
             <StatusDot published={saved.published} />
@@ -144,9 +144,9 @@ export default function SpaceEditorPage() {
         <div className="space-y-6">
           {fieldError && fieldError.field ? <ErrorNotice message={fieldError.message} /> : null}
 
-          <FormSection title="Ταυτότητα χώρου" description="Η αρίθμηση είναι το μόνιμο URL της πινακίδας.">
+          <FormSection title="Στοιχεία χώρου">
             <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
-              <Field label="Αρίθμηση πόρτας" error={err("code")} hint={!err("code") ? <span className="nums break-all">{url.replace(/^https?:\/\//, "")}</span> : undefined}>
+              <Field label="Αρίθμηση" error={err("code")} hint={!err("code") ? <span className="nums break-all">{url.replace(/^https?:\/\//, "")}</span> : undefined}>
                 {(p) => (
                   <TextInput {...p} value={draft.code} onChange={(e) => set({ code: e.target.value })} placeholder="1.1.1" className="nums font-display text-lg" autoFocus={isNew} />
                 )}
@@ -187,21 +187,21 @@ export default function SpaceEditorPage() {
               checked={draft.published}
               onChange={(published) => set({ published })}
               label="Δημοσιευμένο"
-              description={draft.published ? "Η σελίδα φαίνεται σε όποιον σαρώσει το QR." : "Το QR δείχνει «δεν βρέθηκε» μέχρι να δημοσιευτεί."}
+              description={draft.published ? "Η σελίδα είναι δημόσια." : "Η σελίδα δεν είναι δημόσια."}
             />
           </FormSection>
 
-          <FormSection title="Ποιος ή τι βρίσκεται εδώ" description="Ό,τι γράφετε εδώ εμφανίζεται μεγάλο στην πόρτα. Συμπληρώστε και τις δύο γλώσσες.">
+          <FormSection title="Περιεχόμενο">
             <BilingualField
               label="Ονοματεπώνυμο"
-              hint="Κενό για εργαστήρια και αίθουσες"
+              hint="Για εργαστήρια και αίθουσες αφήνεται κενό."
               el={draft.el.occupant}
               en={draft.en.occupant}
               onChange={(l, v) => setLoc(l, "occupant", v)}
               placeholder={{ el: "π.χ. Παπαδόπουλος Γιώργος", en: "e.g. George Papadopoulos" }}
             />
             <BilingualField
-              label="Ιδιότητα ή όνομα χώρου"
+              label="Ιδιότητα / Ονομασία χώρου"
               el={draft.el.title}
               en={draft.en.title}
               onChange={(l, v) => setLoc(l, "title", v)}
@@ -209,7 +209,7 @@ export default function SpaceEditorPage() {
             />
             <BilingualField
               label="Ετικέτα"
-              hint="Χρησιμοποιείται όταν δεν υπάρχει όνομα"
+              hint="Εμφανίζεται όταν δεν υπάρχει ονοματεπώνυμο."
               el={draft.el.label}
               en={draft.en.label}
               error={err("el.label")}
@@ -219,7 +219,7 @@ export default function SpaceEditorPage() {
             <BilingualField label="Τμήμα" el={draft.el.department} en={draft.en.department} onChange={(l, v) => setLoc(l, "department", v)} />
             <BilingualField
               label="Πληροφορίες"
-              hint="Ώρες γραφείου, οδηγίες πρόσβασης κ.λπ."
+              hint="π.χ. ώρες υποδοχής φοιτητών."
               multiline
               el={draft.el.notes}
               en={draft.en.notes}
@@ -227,7 +227,7 @@ export default function SpaceEditorPage() {
             />
           </FormSection>
 
-          <FormSection title="Επικοινωνία" description="Εμφανίζονται ως μεγάλα κουμπιά κλήσης και email στο κινητό.">
+          <FormSection title="Επικοινωνία">
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Τηλέφωνο" error={err("phone")}>
                 {(p) => <TextInput {...p} type="tel" inputMode="tel" className="nums" value={draft.phone} onChange={(e) => set({ phone: e.target.value })} placeholder="22510 36600" />}
@@ -242,7 +242,7 @@ export default function SpaceEditorPage() {
             <section className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-danger/20 px-5 py-4">
               <div>
                 <h2 className="text-base font-semibold text-ink">Διαγραφή χώρου</h2>
-                <p className="text-[0.8125rem] text-muted">Οι τυπωμένες πινακίδες θα δείχνουν «δεν βρέθηκε». Για προσωρινή απόσυρση, απλώς αποδημοσιεύστε.</p>
+                <p className="text-[0.8125rem] text-muted">Η ενέργεια δεν αναιρείται. Για προσωρινή απόσυρση, καταργήστε τη δημοσίευση.</p>
               </div>
               <ConfirmButton onConfirm={remove}>Διαγραφή</ConfirmButton>
             </section>
@@ -260,7 +260,7 @@ export default function SpaceEditorPage() {
 
         <aside className="space-y-4 lg:sticky lg:top-6" aria-label="Προεπισκόπηση">
           <div>
-            <p className="mb-2 text-[0.8125rem] font-semibold text-muted">Έτσι φαίνεται στο κινητό</p>
+            <p className="mb-2 text-[0.8125rem] font-semibold text-muted">Προεπισκόπηση</p>
             <div className="overflow-hidden rounded-2xl border border-line shadow-[var(--shadow-card)]">
               <Plate
                 compact
@@ -284,7 +284,7 @@ export default function SpaceEditorPage() {
           </div>
           {!isNew ? (
             <div>
-              <p className="mb-2 text-[0.8125rem] font-semibold text-muted">Πινακίδα για εκτύπωση</p>
+              <p className="mb-2 text-[0.8125rem] font-semibold text-muted">Πινακίδα</p>
               <PlaquePreview spec={officePlaqueSpec(saved, buildings.find((b) => b.id === saved.buildingId)?.code, savedUrl)} />
               <Button
                 className="mt-3 w-full"
@@ -296,7 +296,7 @@ export default function SpaceEditorPage() {
               >
                 Λήψη PNG
               </Button>
-              {dirty ? <p className="mt-2 text-[0.8125rem] text-muted">Η πινακίδα ανανεώνεται μετά την αποθήκευση.</p> : null}
+              {dirty ? <p className="mt-2 text-[0.8125rem] text-muted">Ενημερώνεται μετά την αποθήκευση.</p> : null}
             </div>
           ) : null}
         </aside>

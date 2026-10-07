@@ -34,3 +34,6 @@ coverage/
 # Design review captures / browser tooling
 .impeccable/review/
 .playwright-mcp/
+
+# cPanel bundle (contains data + admin hash)
+deploy/

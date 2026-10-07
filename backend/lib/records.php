@@ -32,7 +32,38 @@ function office_out(array $r): array
         'en'         => $loc('en'),
         'updatedAt'  => $r['updated_at'] ?? null,
         'updatedBy'  => $r['updated_by_name'] ?? null,
+        'deletedAt'  => $r['deleted_at'] ?? null,
     ];
+}
+
+/** Παλιές αρίθμησεις που ανακατευθύνουν σε αυτόν τον χώρο (τυπωμένα QR). */
+function office_aliases(string $officeId): array
+{
+    $st = db()->prepare('SELECT code FROM office_aliases WHERE office_id = ? ORDER BY created_at');
+    $st->execute([$officeId]);
+    return $st->fetchAll(PDO::FETCH_COLUMN);
+}
+
+/**
+ * Ποιος «κατέχει» έναν κωδικό QR: ενεργός ή διαγραμμένος χώρος, ή παλιά πινακίδα (alias).
+ * Επιστρέφει null αν είναι ελεύθερος. Κανένας κωδικός δεν μοιράζεται ποτέ σιωπηλά.
+ */
+function code_owner(string $code, ?string $exceptOfficeId = null): ?array
+{
+    if ($code === '') return null;
+    $st = db()->prepare('SELECT id, code, label_el, occupant_el, deleted_at FROM offices WHERE (code = ? OR id = ?) AND id <> ? LIMIT 1');
+    $st->execute([$code, $code, (string) $exceptOfficeId]);
+    if ($o = $st->fetch()) {
+        return ['kind' => $o['deleted_at'] ? 'deleted' : 'office', 'office' => $o];
+    }
+    $st = db()->prepare(
+        'SELECT o.id, o.code, o.label_el, o.occupant_el, o.deleted_at
+           FROM office_aliases a JOIN offices o ON o.id = a.office_id
+          WHERE a.code = ? AND a.office_id <> ? LIMIT 1'
+    );
+    $st->execute([$code, (string) $exceptOfficeId]);
+    if ($o = $st->fetch()) return ['kind' => 'alias', 'office' => $o];
+    return null;
 }
 
 /** Επιστρέφει [στήλη => τιμή] έτοιμο για INSERT/UPDATE· κάνει fail() σε άκυρα δεδομένα. */

@@ -46,7 +46,7 @@
       "notes": "Γραφεία μελών ΔΕΠ και χώροι του Τμήματος Πολιτισμικής Τεχνολογίας και Επικοινωνίας."
     },
     "en": {
-      "name": "CT&C – Building 1",
+      "name": "CTC – Building 1",
       "island": "Lesvos",
       "school": "School of Social Sciences",
       "departments": [
@@ -116,7 +116,7 @@
       "notes": "Ερευνητικά και εκπαιδευτικά εργαστήρια του ΤΠΤΕ."
     },
     "en": {
-      "name": "CT&C – Building 2",
+      "name": "CTC – Building 2",
       "island": "Lesvos",
       "school": "School of Social Sciences",
       "departments": [
@@ -136,7 +136,7 @@
         "2.3.2 – Εργαστήριο Η/Υ ΠΜΣ"
       ],
       "services": [],
-      "notes": "Research and teaching laboratories of CT&C."
+      "notes": "Research and teaching laboratories of CTC."
     }
   }
 ]

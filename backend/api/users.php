@@ -40,8 +40,8 @@ function validated_user_fields(array $in, bool $creating): array
     $fields = ['name' => $name, 'email' => $email, 'role' => $role, 'active' => !array_key_exists('active', $in) || !empty($in['active']) ? 1 : 0];
     $password = (string) ($in['password'] ?? '');
     if ($creating || $password !== '') {
-        if (mb_strlen($password) < 8) fail('Ο κωδικός χρειάζεται τουλάχιστον 8 χαρακτήρες.', 422, ['field' => 'password']);
-        $fields['password_hash'] = password_hash($password, PASSWORD_DEFAULT);
+        validate_new_password($password, $email);
+        $fields['password_hash'] = hash_password($password);
     }
     return $fields;
 }
@@ -77,6 +77,8 @@ if ($m === 'PUT') {
     $sets = implode(', ', array_map(fn ($c) => "$c = ?", array_keys($f)));
     db()->prepare("UPDATE users SET $sets WHERE id = ?")->execute([...array_values($f), $id]);
     $what = isset($f['password_hash']) ? ' (νέος κωδικός)' : '';
+    // A new password signs out the user's other sessions; keep the admin's own session if it was theirs
+    if ($isSelf && isset($f['password_hash'])) $_SESSION['pwf'] = password_fingerprint($f['password_hash']);
     log_activity($me, 'update', 'user', (string) $id, "Ενημέρωσε τον χρήστη {$f['name']}$what");
     json_out(public_user(find_user($id)));
 }

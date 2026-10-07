@@ -57,7 +57,6 @@ export default function PlaquesPage() {
     <AdminPage
       wide
       title="Πινακίδες QR"
-      description="Κάθε QR δείχνει σε μόνιμο URL. Τυπώστε το μία φορά και αλλάξτε το περιεχόμενο όποτε χρειαστεί."
       actions={
         <Button variant="primary" icon={<Download className="size-4" />} loading={!!batch} disabled={!list.length || !!batch} onClick={downloadAll}>
           {batch ? `Λήψη ${batch.done}/${batch.total}` : `Λήψη όλων (${list.length})`}
@@ -101,8 +100,8 @@ export default function PlaquesPage() {
           ))}
         </div>
       ) : res.status === "ok" && list.length === 0 ? (
-        <EmptyState icon={<QrCode className="size-5" />} title="Καμία πινακίδα εδώ">
-          {query ? "Δεν ταιριάζει κανένας χώρος με την αναζήτηση." : "Αλλάξτε φίλτρο για να δείτε και τα πρόχειρα."}
+        <EmptyState icon={<QrCode className="size-5" />} title="Δεν βρέθηκαν πινακίδες">
+          {query ? "Κανένα αποτέλεσμα για την αναζήτηση." : "Αλλάξτε τα φίλτρα."}
         </EmptyState>
       ) : (
         <ul className="grid grid-cols-[repeat(auto-fill,minmax(14.5rem,1fr))] gap-x-6 gap-y-10">
@@ -134,7 +133,7 @@ function PlaqueTile({ office, building, editable }: { office: Office; building?:
         <PlaquePreview spec={spec} />
         {!office.published ? (
           <Badge tone="warn" className="absolute right-3 top-4 shadow-sm">
-            Πρόχειρο · δεν φαίνεται δημόσια
+            Μη δημοσιευμένο
           </Badge>
         ) : null}
       </div>
@@ -171,7 +170,7 @@ function PlaqueTile({ office, building, editable }: { office: Office; building?:
               setCopied(true);
               setTimeout(() => setCopied(false), 1600);
             } catch {
-              toast("err", "Δεν επιτρέπεται η αντιγραφή σε αυτόν τον browser.");
+              toast("err", "Η αντιγραφή δεν είναι διαθέσιμη.");
             }
           }}
         >
