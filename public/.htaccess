@@ -6,16 +6,18 @@ ServerSignature Off
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Ενεργοποίησε ΜΟΝΟ αφού εγκατασταθεί έγκυρο πιστοποιητικό SSL:
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  # Let's Encrypt HTTP-01 challenge πριν το HTTPS redirect
+  RewriteRule ^\.well-known/ - [L]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
   # Μόνο GET/POST/PUT/DELETE/OPTIONS/HEAD
   RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|POST|PUT|DELETE|OPTIONS)$
   RewriteRule ^ - [R=405,L]
 
-  # Επιβεβαίωση SSL (Let's Encrypt), API και υπαρκτά αρχεία σερβίρονται κανονικά
-  RewriteRule ^\.well-known/ - [L]
+  # API και υπαρκτά αρχεία σερβίρονται κανονικά
   RewriteRule ^api/ - [L]
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
@@ -38,8 +40,7 @@ ServerSignature Off
   # Μόνο δικά μας scripts/στυλ/fonts· Google Translate για τις δημόσιες σελίδες.
   # Το sha256 επιτρέπει ΜΟΝΟ το inline script του Translate widget (αν το αλλάξει η Google, σταματά μόνο η μετάφραση).
   # Τα tracking pixels της Google μπλοκάρονται σκόπιμα.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-R6kjt5FwTd5vAw94Q08NLDZsSaGTzg4NsdIfKtECSp0=' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com; img-src 'self' data: blob: https://www.gstatic.com https://translate.google.com https://translate.googleapis.com https://fonts.gstatic.com; font-src 'self'; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com; frame-src https://translate.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" "expr=%{CONTENT_TYPE} =~ m#text/html#"
-  # Μετά το SSL πρόσθεσε στο τέλος του CSP: ; upgrade-insecure-requests
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-R6kjt5FwTd5vAw94Q08NLDZsSaGTzg4NsdIfKtECSp0=' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com; img-src 'self' data: blob: https://www.gstatic.com https://translate.google.com https://translate.googleapis.com https://fonts.gstatic.com; font-src 'self'; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com; frame-src https://translate.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" "expr=%{CONTENT_TYPE} =~ m#text/html#"
   # HSTS μόνο πάνω σε HTTPS (οι browsers το αγνοούν σε μη έγκυρο πιστοποιητικό)
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
   # Ο κατάλογος διαχείρισης δεν ευρετηριάζεται
