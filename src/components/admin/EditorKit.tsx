@@ -41,10 +41,14 @@ export function BilingualField({
       <legend className="sr-only">{label}</legend>
       <div className="grid gap-3 md:grid-cols-2">
         <Field label={label} lang="ΕΛ" error={error} hint={hint}>
-          {(p) => <Input {...p} lang="el" value={el} placeholder={placeholder?.el} onChange={(e) => onChange("el", e.target.value)} />}
+          {(p) => (
+            <Input {...p} lang="el" title={el || undefined} value={el} placeholder={placeholder?.el} onChange={(e) => onChange("el", e.target.value)} />
+          )}
         </Field>
         <Field label={<span className="md:sr-only">{label}</span>} lang="EN">
-          {(p) => <Input {...p} lang="en" value={en} placeholder={placeholder?.en} onChange={(e) => onChange("en", e.target.value)} />}
+          {(p) => (
+            <Input {...p} lang="en" title={en || undefined} value={en} placeholder={placeholder?.en} onChange={(e) => onChange("en", e.target.value)} />
+          )}
         </Field>
       </div>
     </fieldset>

@@ -20,17 +20,18 @@ export function absoluteUrl(path: string): string {
 
 /**
  * What the door says, in order of usefulness:
- * a person's name, else what the room is (title), else its label.
+ * a person's name, else the room/lab label, else its role/category title.
  */
 export function officeHeadline(o: Office, lang: Lang): { headline: string; sub: string } {
   const loc = o[lang];
   const fallback = o.el;
-  const occupant = loc.occupant || fallback.occupant;
-  const title = loc.title || fallback.title;
-  const label = loc.label || fallback.label;
+  const occupant = (loc.occupant || fallback.occupant).trim();
+  const title = (loc.title || fallback.title).trim();
+  const label = (loc.label || fallback.label).trim();
   if (occupant) return { headline: occupant, sub: title };
+  if (label) return { headline: label, sub: title && title !== label ? title : "" };
   if (title) return { headline: title, sub: "" };
-  return { headline: label || o.code, sub: "" };
+  return { headline: o.code, sub: "" };
 }
 
 /** Accent-insensitive, case-insensitive match across both languages. */

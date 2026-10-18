@@ -484,7 +484,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Αίθουσα Τηλεδιασκέψεων",
+      "label": "Videoconference Room",
       "occupant": "",
       "title": "Dept. of Cultural Technology and Communication",
       "building": "Building 1",
@@ -562,7 +562,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Γραφείο συμβασιούχων συναδελφισσών/ων",
+      "label": "Contract staff office",
       "occupant": "",
       "title": "Dept. of Cultural Technology and Communication",
       "building": "Building 1",
@@ -614,7 +614,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Ερευνητικό Εργαστήριο - Τεχνολογίες Προστασίας της Ιδιωτικότητας & Εφαρμογές Πληροφορικής στις Κοινωνικές Επιστήμες",
+      "label": "Research Laboratory - Privacy Protection Technologies & ICT Applications in the Social Sciences",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -640,7 +640,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Πολιτισμικών Πληροφορικών Συστημάτων",
+      "label": "Laboratory of Cultural Information Systems",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -666,7 +666,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Διαχείρισης Πολιτισμικής Κληρονομιάς",
+      "label": "Laboratory of Cultural Heritage Management",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -692,7 +692,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "label": "Intelligent Systems Laboratory",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -718,7 +718,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Ευφυών Συστημάτων",
+      "label": "Intelligent Systems Laboratory",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -822,7 +822,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Μουσειολογίας",
+      "label": "Museology Laboratory",
       "occupant": "",
       "title": "CTC Research Laboratory",
       "building": "Building 2",
@@ -848,7 +848,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Η/Υ ΠΠΣ",
+      "label": "Undergraduate Computer Laboratory",
       "occupant": "",
       "title": "CTC Teaching Laboratory",
       "building": "Building 2",
@@ -874,7 +874,7 @@
       "notes": ""
     },
     "en": {
-      "label": "Εργαστήριο Η/Υ ΠΜΣ",
+      "label": "Postgraduate Computer Laboratory",
       "occupant": "",
       "title": "CTC Teaching Laboratory",
       "building": "Building 2",
